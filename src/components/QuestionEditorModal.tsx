@@ -21,15 +21,16 @@ export const QuestionEditorModal: React.FC<QuestionEditorModalProps> = ({
   const [topic, setTopic] = useState(question.topic);
   const [difficulty, setDifficulty] = useState<Difficulty>(question.difficulty);
   const [explanation, setExplanation] = useState(question.explanation);
+  const [image, setImage] = useState(question.image || '');
 
   // State untuk options (PG & PGK)
   const [options, setOptions] = useState<OptionItem[]>(
     question.options ? JSON.parse(JSON.stringify(question.options)) : []
   );
 
-  // State untuk kunci jawaban PG & PGK
+  // State untuk kunci jawaban PG, PGK, & Benar/Salah
   const [correctAnswer, setCorrectAnswer] = useState<string | string[]>(
-    question.correctAnswer || (question.type === 'pgk' ? [] : 'A')
+    question.correctAnswer || (question.type === 'pgk' ? [] : question.type === 'benar_salah' ? 'Benar' : 'A')
   );
 
   // State untuk statements (PGK Kategori)
@@ -73,9 +74,10 @@ export const QuestionEditorModal: React.FC<QuestionEditorModalProps> = ({
       topic: topic.trim(),
       difficulty,
       explanation: explanation.trim(),
-      options: question.type !== 'pgk_kategori' ? options : undefined,
+      image: image.trim() || undefined,
+      options: question.type === 'pg' || question.type === 'pgk' ? options : undefined,
       statements: question.type === 'pgk_kategori' ? statements : undefined,
-      correctAnswer: question.type !== 'pgk_kategori' ? correctAnswer : undefined,
+      correctAnswer: question.type === 'pgk_kategori' ? undefined : correctAnswer,
     };
 
     onSave(updated);
@@ -152,6 +154,60 @@ export const QuestionEditorModal: React.FC<QuestionEditorModalProps> = ({
               required
             />
           </div>
+
+          {/* Gambar / SVG Soal */}
+          <div>
+            <label className="block text-xs font-bold text-slate-700 mb-1">
+              Gambar Soal (Kode SVG atau URL Gambar)
+            </label>
+            <textarea
+              rows={2}
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
+              placeholder="Contoh: <svg ...>...</svg> atau https://..."
+              className="w-full px-3 py-2 rounded-xl border border-slate-300 text-[11px] font-mono leading-normal focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            />
+            {image && (
+              <div className="mt-2 p-2 bg-slate-50 border border-slate-200 rounded-lg flex justify-center max-h-32 overflow-hidden">
+                {image.startsWith('<svg') ? (
+                  <div dangerouslySetInnerHTML={{ __html: image }} className="flex justify-center scale-90" />
+                ) : (
+                  <img src={image} alt="Preview" className="max-h-28 object-contain" />
+                )}
+              </div>
+            )}
+          </div>
+
+          {/* Opsi Jawaban untuk Benar / Salah */}
+          {question.type === 'benar_salah' && (
+            <div className="p-3.5 rounded-xl border border-slate-200 bg-slate-50 space-y-2">
+              <label className="block text-xs font-bold text-slate-700">
+                Kunci Jawaban Pernyataan:
+              </label>
+              <div className="flex items-center gap-6">
+                <label className="flex items-center gap-2 text-xs font-bold text-emerald-800 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="correct-bs-editor"
+                    checked={correctAnswer === 'Benar'}
+                    onChange={() => setCorrectAnswer('Benar')}
+                    className="w-4 h-4 text-emerald-600 focus:ring-emerald-500"
+                  />
+                  <span>BENAR</span>
+                </label>
+                <label className="flex items-center gap-2 text-xs font-bold text-rose-800 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="correct-bs-editor"
+                    checked={correctAnswer === 'Salah'}
+                    onChange={() => setCorrectAnswer('Salah')}
+                    className="w-4 h-4 text-rose-600 focus:ring-rose-500"
+                  />
+                  <span>SALAH</span>
+                </label>
+              </div>
+            </div>
+          )}
 
           {/* Opsi Jawaban untuk PG */}
           {question.type === 'pg' && (

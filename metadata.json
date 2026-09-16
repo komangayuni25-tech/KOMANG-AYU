@@ -1,6 +1,6 @@
 {
   "name": "Tes Sumatif kelas 5",
-  "description": "Aplikasi Tes Sumatif Matematika TKA Kelas VI SD Negeri 3 Loloan Timur dengan 4 tahap tes, sinkronisasi Google Spreadsheet, unduh PDF naskah \u0026 hasil tes, serta panel guru.",
+  "description": "Aplikasi Tes Sumatif Matematika Kelas V SD Negeri 3 Loloan Timur lingkup materi Persekutuan Faktor, Menentukan KPK dan FPB (25 Pilihan Ganda & 5 Benar-Salah bergambar), sinkronisasi Google Spreadsheet, unduh PDF naskah & hasil tes, serta panel guru.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

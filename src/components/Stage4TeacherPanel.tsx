@@ -747,10 +747,10 @@ export const Stage4TeacherPanel: React.FC<Stage4TeacherPanelProps> = ({
           <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-100 gap-3">
             <div>
               <h3 className="text-base font-bold text-slate-900">
-                Struktur &amp; Bank Soal Matematika TKA ({questions.length} Butir)
+                Struktur &amp; Bank Soal Matematika ({questions.length} Butir)
               </h3>
               <p className="text-xs text-slate-500">
-                18 Soal Pilihan Ganda, 3 Soal Pilihan Ganda Kompleks, 9 Soal PGK Kategori
+                25 Soal Pilihan Ganda (PG Bergambar), 5 Soal Benar / Salah (Bergambar)
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-2">
@@ -760,7 +760,7 @@ export const Stage4TeacherPanel: React.FC<Stage4TeacherPanelProps> = ({
                   onClick={() => {
                     if (
                       confirm(
-                        'Kembalikan seluruh bank soal ke 30 butir standar (18 PG, 3 PGK, 9 PGK Kategori)?'
+                        'Kembalikan seluruh bank soal ke 30 butir standar KPK dan FPB (25 PG, 5 Benar/Salah)?'
                       )
                     ) {
                       onResetDefaultQuestions();
@@ -796,6 +796,7 @@ export const Stage4TeacherPanel: React.FC<Stage4TeacherPanelProps> = ({
                     </span>
                     <span className="text-xs font-bold px-2 py-0.5 rounded bg-slate-200 text-slate-700">
                       {q.type === 'pg' && 'Pilihan Ganda'}
+                      {q.type === 'benar_salah' && 'Benar / Salah'}
                       {q.type === 'pgk' && 'Pilihan Ganda Kompleks'}
                       {q.type === 'pgk_kategori' && 'PGK Kategori'}
                     </span>
@@ -824,9 +825,36 @@ export const Stage4TeacherPanel: React.FC<Stage4TeacherPanelProps> = ({
                   </div>
                 </div>
 
+                {/* Ilustrasi Gambar Soal */}
+                {q.image && (
+                  <div className="p-3 bg-white border border-slate-200 rounded-xl overflow-hidden flex justify-center max-w-sm">
+                    {q.image.startsWith('<svg') ? (
+                      <div dangerouslySetInnerHTML={{ __html: q.image }} className="w-full flex justify-center scale-90" />
+                    ) : (
+                      <img src={q.image} alt={`Ilustrasi Soal #${q.id}`} className="max-h-36 object-contain" />
+                    )}
+                  </div>
+                )}
+
                 <p className="text-xs sm:text-sm text-slate-900 font-medium whitespace-pre-line">
                   {q.text}
                 </p>
+
+                {/* Kunci Jawaban Benar / Salah */}
+                {q.type === 'benar_salah' && (
+                  <div className="flex items-center gap-2 text-xs">
+                    <span className="text-slate-600 font-medium">Kunci Jawaban:</span>
+                    <span
+                      className={`font-bold px-2.5 py-1 rounded-md text-xs ${
+                        q.correctAnswer === 'Benar'
+                          ? 'bg-emerald-100 text-emerald-800 border border-emerald-300'
+                          : 'bg-rose-100 text-rose-800 border border-rose-300'
+                      }`}
+                    >
+                      {q.correctAnswer}
+                    </span>
+                  </div>
+                )}
 
                 {/* Opsi / Pernyataan */}
                 {q.options && (

@@ -208,10 +208,10 @@ export function downloadStudentResultPDF(result: ExamResult): void {
   doc.text('Mengetahui,', colLeft, ttdY);
   doc.text('Orang Tua / Wali Siswa,', colLeft, ttdY + 5);
 
-  // Kolom Kanan: Guru Kelas VI
+  // Kolom Kanan: Guru Kelas
   const tglFormatted = formatIndonesianDate();
   doc.text(`Jembrana, ${tglFormatted}`, colRight, ttdY);
-  doc.text('Guru Mata Pelajaran / Kelas VI,', colRight, ttdY + 5);
+  doc.text(`Guru Kelas ${CONFIG.KELAS},`, colRight, ttdY + 5);
 
   // Area tanda tangan (spasi vertikal)
   const lineY = ttdY + 27;
@@ -226,7 +226,7 @@ export function downloadStudentResultPDF(result: ExamResult): void {
   doc.line(colRight, lineY, colRight + 48, lineY);
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(8.5);
-  doc.text(`NIP. ${CONFIG.NIP_GURU}`, colRight, lineY + 4);
+  doc.text(`NIPPPK. ${CONFIG.NIP_GURU}`, colRight, lineY + 4);
 
   // Simpan PDF
   const safeName = (result.nama || 'siswa').replace(/[^a-zA-Z0-9]/g, '_');
@@ -260,7 +260,7 @@ export function downloadExamQuestionsPDF(questions: Question[]): void {
     doc.setFontSize(8);
     doc.setTextColor(120, 120, 120);
     doc.text(
-      `${CONFIG.SEKOLAH} | Naskah Soal Tes Sumatif Matematika Kelas VI`,
+      `${CONFIG.SEKOLAH} | Naskah Soal Tes Sumatif Matematika Kelas ${CONFIG.KELAS}`,
       pageWidth / 2,
       9,
       { align: 'center' }
@@ -319,6 +319,7 @@ export function downloadExamQuestionsPDF(questions: Question[]): void {
     doc.setFontSize(9.5);
 
     let typeLabel = 'Pilihan Ganda';
+    if (q.type === 'benar_salah') typeLabel = 'Benar / Salah';
     if (q.type === 'pgk') typeLabel = 'Pilihan Ganda Kompleks (Bisa >1 jawaban benar)';
     if (q.type === 'pgk_kategori') typeLabel = 'Pilihan Ganda Kompleks Kategori (Benar / Salah)';
 
@@ -333,6 +334,13 @@ export function downloadExamQuestionsPDF(questions: Question[]): void {
     checkPageBreak(textLines.length * 4.5 + 15);
     doc.text(textLines, 16, y);
     y += textLines.length * 4.5 + 2;
+
+    // Opsi Jawaban Benar / Salah
+    if (q.type === 'benar_salah') {
+      checkPageBreak(8);
+      doc.text('[  ] BENAR        [  ] SALAH', 20, y);
+      y += 6;
+    }
 
     // Opsi Jawaban
     if (q.options && q.options.length > 0) {
@@ -360,7 +368,7 @@ export function downloadExamQuestionsPDF(questions: Question[]): void {
     }
   });
 
-  doc.save(`Naskah_Soal_Matematika_Kelas_VI_${CONFIG.SEKOLAH.replace(/[^a-zA-Z0-9]/g, '_')}.pdf`);
+  doc.save(`Naskah_Soal_Matematika_Kelas_${CONFIG.KELAS}_${CONFIG.SEKOLAH.replace(/[^a-zA-Z0-9]/g, '_')}.pdf`);
 }
 
 /**
@@ -608,7 +616,7 @@ export function downloadResultsRecapPDF(results: ExamResult[]): void {
 
   // Kanan: Guru Pengampu
   doc.text(`Jembrana, ${tglStr}`, colRightX, y);
-  doc.text('Guru Mata Pelajaran,', colRightX, y + 4.5);
+  doc.text(`Guru Kelas ${CONFIG.KELAS},`, colRightX, y + 4.5);
 
   const sigLineY = y + 23;
   // Nama & NIP Kepala Sekolah
@@ -619,14 +627,14 @@ export function downloadResultsRecapPDF(results: ExamResult[]): void {
   doc.setFontSize(8);
   doc.text(`NIP. ${CONFIG.NIP_KEPALA_SEKOLAH}`, colLeftX, sigLineY + 5);
 
-  // Nama & NIP Guru
+  // Nama & NIP/NIPPPK Guru
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(8.5);
   doc.text(CONFIG.GURU, colRightX, sigLineY);
   doc.line(colRightX, sigLineY + 1, colRightX + 50, sigLineY + 1);
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(8);
-  doc.text(`NIP. ${CONFIG.NIP_GURU}`, colRightX, sigLineY + 5);
+  doc.text(`NIPPPK. ${CONFIG.NIP_GURU}`, colRightX, sigLineY + 5);
 
   // --- FOOTER DI SETIAP HALAMAN ---
   const totalPages = doc.getNumberOfPages();

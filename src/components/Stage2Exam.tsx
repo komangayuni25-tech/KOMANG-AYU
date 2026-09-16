@@ -96,7 +96,7 @@ export const Stage2Exam: React.FC<Stage2ExamProps> = ({
     if (!ans) return false;
 
     const q = shuffledQuestions[idx];
-    if (q.type === 'pg') {
+    if (q.type === 'pg' || q.type === 'benar_salah') {
       return typeof ans === 'string' && ans.length > 0;
     }
     if (q.type === 'pgk') {
@@ -129,6 +129,14 @@ export const Stage2Exam: React.FC<Stage2ExamProps> = ({
     setAnswers((prev) => ({
       ...prev,
       [currentIndex]: optionText,
+    }));
+  };
+
+  // Handler jawaban Benar / Salah
+  const handleSelectBenarSalah = (val: 'Benar' | 'Salah') => {
+    setAnswers((prev) => ({
+      ...prev,
+      [currentIndex]: val,
     }));
   };
 
@@ -188,6 +196,16 @@ export const Stage2Exam: React.FC<Stage2ExamProps> = ({
         // Cocokkan teks opsi yang dipilih dengan teks opsi dari kunci jawaban original
         const correctOpt = origQ.options?.find((o) => o.id === origQ.correctAnswer);
         if (correctOpt && userAns === correctOpt.text) {
+          totalScore += 1;
+          benarCount += 1;
+        }
+      } else if (sq.type === 'benar_salah') {
+        // Cocokkan jawaban Benar atau Salah
+        if (
+          typeof userAns === 'string' &&
+          typeof origQ.correctAnswer === 'string' &&
+          userAns.trim().toLowerCase() === origQ.correctAnswer.trim().toLowerCase()
+        ) {
           totalScore += 1;
           benarCount += 1;
         }
@@ -356,6 +374,7 @@ export const Stage2Exam: React.FC<Stage2ExamProps> = ({
                   </span>
                   <span className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700">
                     {currentQ.type === 'pg' && 'Pilihan Ganda'}
+                    {currentQ.type === 'benar_salah' && 'Benar / Salah'}
                     {currentQ.type === 'pgk' && 'Pilihan Ganda Kompleks'}
                     {currentQ.type === 'pgk_kategori' && 'PGK Kategori (Benar / Salah)'}
                   </span>
@@ -368,14 +387,86 @@ export const Stage2Exam: React.FC<Stage2ExamProps> = ({
               {/* Petunjuk Pengisian Berdasarkan Tipe */}
               <div className="mb-4 text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-50 text-blue-800 border border-blue-100 inline-block">
                 {currentQ.type === 'pg' && 'Pilihlah salah satu jawaban yang paling tepat.'}
+                {currentQ.type === 'benar_salah' && 'Tentukan apakah pernyataan matematika berikut ini bernilai BENAR atau SALAH.'}
                 {currentQ.type === 'pgk' && 'Pilihlah seluruh pernyataan yang bernilai benar (bisa lebih dari satu).'}
                 {currentQ.type === 'pgk_kategori' && 'Tentukan pilihan Benar atau Salah untuk setiap pernyataan di bawah ini.'}
               </div>
+
+              {/* Gambar / Diagram Ilustrasi Edukatif Soal */}
+              {currentQ.image && (
+                <div className="mb-5 p-3 sm:p-4 bg-slate-50 border border-slate-200 rounded-xl overflow-hidden flex justify-center shadow-2xs">
+                  {currentQ.image.startsWith('<svg') ? (
+                    <div
+                      className="w-full flex justify-center"
+                      dangerouslySetInnerHTML={{ __html: currentQ.image }}
+                    />
+                  ) : (
+                    <img
+                      src={currentQ.image}
+                      alt={`Ilustrasi Soal Nomor ${currentIndex + 1}`}
+                      className="max-h-60 object-contain rounded-lg"
+                    />
+                  )}
+                </div>
+              )}
 
               {/* Teks Soal */}
               <div className="text-sm sm:text-base text-slate-900 leading-relaxed font-medium whitespace-pre-line mb-6">
                 {currentQ.text}
               </div>
+
+              {/* Tampilan Opsi Jawaban: Benar / Salah */}
+              {currentQ.type === 'benar_salah' && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 my-4">
+                  <button
+                    type="button"
+                    id={`btn-bs-benar-${currentIndex}`}
+                    onClick={() => handleSelectBenarSalah('Benar')}
+                    className={`p-4 sm:p-5 rounded-2xl border-2 transition-all flex items-center justify-center gap-3 cursor-pointer ${
+                      answers[currentIndex] === 'Benar'
+                        ? 'border-emerald-600 bg-emerald-50 text-emerald-950 font-bold ring-2 ring-emerald-500 shadow-sm'
+                        : 'border-slate-200 bg-white hover:border-emerald-300 hover:bg-emerald-50/40 text-slate-700'
+                    }`}
+                  >
+                    <div
+                      className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${
+                        answers[currentIndex] === 'Benar'
+                          ? 'bg-emerald-600 text-white'
+                          : 'bg-emerald-100 text-emerald-700'
+                      }`}
+                    >
+                      <Check className="w-5 h-5" />
+                    </div>
+                    <span className="text-sm sm:text-base font-extrabold tracking-wide">
+                      BENAR
+                    </span>
+                  </button>
+
+                  <button
+                    type="button"
+                    id={`btn-bs-salah-${currentIndex}`}
+                    onClick={() => handleSelectBenarSalah('Salah')}
+                    className={`p-4 sm:p-5 rounded-2xl border-2 transition-all flex items-center justify-center gap-3 cursor-pointer ${
+                      answers[currentIndex] === 'Salah'
+                        ? 'border-rose-600 bg-rose-50 text-rose-950 font-bold ring-2 ring-rose-500 shadow-sm'
+                        : 'border-slate-200 bg-white hover:border-rose-300 hover:bg-rose-50/40 text-slate-700'
+                    }`}
+                  >
+                    <div
+                      className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${
+                        answers[currentIndex] === 'Salah'
+                          ? 'bg-rose-600 text-white'
+                          : 'bg-rose-100 text-rose-700'
+                      }`}
+                    >
+                      <XCircle className="w-5 h-5" />
+                    </div>
+                    <span className="text-sm sm:text-base font-extrabold tracking-wide">
+                      SALAH
+                    </span>
+                  </button>
+                </div>
+              )}
 
               {/* Tampilan Opsi Jawaban: Pilihan Ganda (PG) */}
               {currentQ.type === 'pg' && (
@@ -546,10 +637,10 @@ export const Stage2Exam: React.FC<Stage2ExamProps> = ({
           <div className="bg-white rounded-2xl p-5 shadow-xs border border-slate-200">
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 mb-3 flex items-center justify-between">
               <span>Nomor Soal Ujian</span>
-              <span className="text-[11px] font-normal text-slate-500">22 Butir</span>
+              <span className="text-[11px] font-normal text-slate-500">{totalQuestions} Butir</span>
             </h4>
 
-            {/* Grid 22 Soal */}
+            {/* Grid 30 Soal */}
             <div className="grid grid-cols-5 sm:grid-cols-6 lg:grid-cols-5 gap-2 mb-4">
               {shuffledQuestions.map((_, i) => {
                 const isCurrent = currentIndex === i;

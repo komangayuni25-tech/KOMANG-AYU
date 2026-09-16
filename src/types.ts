@@ -2,7 +2,7 @@
  * Definisi Type & Interface Aplikasi Tes Sumatif
  */
 
-export type QuestionType = 'pg' | 'pgk' | 'pgk_kategori';
+export type QuestionType = 'pg' | 'benar_salah' | 'pgk' | 'pgk_kategori';
 export type Difficulty = 'Mudah' | 'Sedang' | 'Sukar';
 
 export interface StudentBirthDate {
@@ -32,9 +32,10 @@ export interface Question {
   id: number;
   type: QuestionType;
   text: string;
+  image?: string; // Gambar/Diagram visual SVG atau URL ilustrasi edukatif
   options?: OptionItem[]; // Untuk 'pg' (4 opsi) dan 'pgk' (3 opsi)
   statements?: StatementItem[]; // Untuk 'pgk_kategori' (3 pernyataan)
-  correctAnswer?: string | string[]; // string untuk 'pg' (e.g. 'B'), array untuk 'pgk' (e.g. ['A', 'C'])
+  correctAnswer?: string | string[]; // string untuk 'pg' (e.g. 'B') atau 'benar_salah' (e.g. 'Benar'/'Salah'), array untuk 'pgk'
   difficulty: Difficulty;
   explanation: string;
   topic: string;

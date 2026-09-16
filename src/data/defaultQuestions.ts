@@ -1,578 +1,1044 @@
 import { Question } from '../types';
 
 export const INITIAL_QUESTIONS: Question[] = [
-  // --- PILIHAN GANDA (18 SOAL) ---
+  // ==========================================
+  // BAGIAN I: PILIHAN GANDA (25 SOAL)
+  // ==========================================
+
+  // --- SOAL 1 ---
   {
     id: 1,
     type: 'pg',
-    topic: 'Bilangan Bulat',
+    topic: 'Faktor Bilangan',
     difficulty: 'Mudah',
-    text: 'Suhu sebongkah es mula-mula adalah -5°C. Es tersebut dipanaskan di atas kompor sehingga suhunya naik rata-rata 3°C setiap 2 menit. Suhu es tersebut setelah dipanaskan selama 10 menit adalah...',
+    text: 'Perhatikan bagan perkalian faktor bilangan 18 pada gambar di atas!\nSemua faktor dari bilangan 18 adalah...',
+    image: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="130" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <rect x="150" y="12" width="100" height="32" rx="8" fill="#1E40AF"/>
+      <text x="200" y="33" fill="#FFFFFF" font-size="14" font-weight="bold" text-anchor="middle">BILANGAN 18</text>
+      <!-- Row 1 -->
+      <rect x="40" y="60" width="90" height="28" rx="6" fill="#EFF6FF" stroke="#3B82F6"/>
+      <text x="85" y="78" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">1 × 18 = 18</text>
+      <!-- Row 2 -->
+      <rect x="155" y="60" width="90" height="28" rx="6" fill="#EFF6FF" stroke="#3B82F6"/>
+      <text x="200" y="78" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">2 × 9 = 18</text>
+      <!-- Row 3 -->
+      <rect x="270" y="60" width="90" height="28" rx="6" fill="#EFF6FF" stroke="#3B82F6"/>
+      <text x="315" y="78" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">3 × 6 = 18</text>
+      <text x="200" y="112" fill="#64748B" font-size="11" text-anchor="middle">Faktor pembagi habis bilangan 18</text>
+    </svg>`,
     options: [
-      { id: 'A', text: '8°C' },
-      { id: 'B', text: '10°C' },
-      { id: 'C', text: '15°C' },
-      { id: 'D', text: '-2°C' },
+      { id: 'A', text: '1, 2, 3, 4, 6, 18' },
+      { id: 'B', text: '1, 2, 3, 6, 9, 18' },
+      { id: 'C', text: '1, 3, 6, 9, 18' },
+      { id: 'D', text: '2, 3, 6, 9, 18' },
     ],
     correctAnswer: 'B',
     explanation:
-      'Kenaikan suhu terjadi selama 10 menit dengan kenaikan 3°C tiap 2 menit.\nBanyak periode kenaikan = 10 ÷ 2 = 5 kali.\nTotal kenaikan suhu = 5 × 3°C = 15°C.\nSuhu akhir = Suhu awal + Kenaikan = -5°C + 15°C = 10°C.',
+      'Faktor dari suatu bilangan adalah bilangan-bilangan yang dapat membagi habis bilangan tersebut tanpa sisa.\n18 ÷ 1 = 18\n18 ÷ 2 = 9\n18 ÷ 3 = 6\nJadi faktor dari 18 adalah 1, 2, 3, 6, 9, dan 18.',
   },
+
+  // --- SOAL 2 ---
   {
     id: 2,
     type: 'pg',
-    topic: 'Operasi Pecahan & Bilangan Cacah',
-    difficulty: 'Sedang',
-    text: 'Pak Ahmad memanen 2,5 kuintal beras dari sawahnya. Sebanyak 3/5 kuintal dijual ke pasar, dan sisanya dibagikan kepada 5 orang tetangga sama banyak. Berapa kilogram beras yang diterima oleh masing-masing tetangga?',
+    topic: 'Faktor Bilangan',
+    difficulty: 'Mudah',
+    text: 'Perhatikan tabel pasangan faktor dari bilangan 24 di atas.\nBerdasarkan tabel tersebut, banyaknya faktor dari bilangan 24 adalah...',
+    image: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="130" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <rect x="150" y="10" width="100" height="28" rx="6" fill="#047857"/>
+      <text x="200" y="29" fill="#FFFFFF" font-size="13" font-weight="bold" text-anchor="middle">FAKTOR DARI 24</text>
+      <!-- Cards -->
+      <g transform="translate(30, 50)">
+        <rect x="0" y="0" width="75" height="30" rx="6" fill="#ECFDF5" stroke="#10B981"/>
+        <text x="37" y="20" font-size="12" font-weight="bold" fill="#065F46" text-anchor="middle">1 × 24</text>
+        <rect x="88" y="0" width="75" height="30" rx="6" fill="#ECFDF5" stroke="#10B981"/>
+        <text x="125" y="20" font-size="12" font-weight="bold" fill="#065F46" text-anchor="middle">2 × 12</text>
+        <rect x="176" y="0" width="75" height="30" rx="6" fill="#ECFDF5" stroke="#10B981"/>
+        <text x="213" y="20" font-size="12" font-weight="bold" fill="#065F46" text-anchor="middle">3 × 8</text>
+        <rect x="264" y="0" width="75" height="30" rx="6" fill="#ECFDF5" stroke="#10B981"/>
+        <text x="301" y="20" font-size="12" font-weight="bold" fill="#065F46" text-anchor="middle">4 × 6</text>
+      </g>
+      <text x="200" y="110" fill="#475569" font-size="11" text-anchor="middle">Faktor: { 1, 2, 3, 4, 6, 8, 12, 24 }</text>
+    </svg>`,
     options: [
-      { id: 'A', text: '32 kg' },
-      { id: 'B', text: '35 kg' },
-      { id: 'C', text: '38 kg' },
-      { id: 'D', text: '42 kg' },
+      { id: 'A', text: '6 bilangan' },
+      { id: 'B', text: '7 bilangan' },
+      { id: 'C', text: '8 bilangan' },
+      { id: 'D', text: '10 bilangan' },
     ],
     correctAnswer: 'C',
     explanation:
-      '1 kuintal = 100 kg.\nPanen = 2,5 kuintal = 250 kg.\nDijual ke pasar = 3/5 kuintal = (3/5 × 100 kg) = 60 kg.\nSisa beras = 250 kg - 60 kg = 190 kg.\nBeras tiap tetangga = 190 kg ÷ 5 = 38 kg.',
+      'Pasangan perkalian yang menghasilkan 24:\n1 × 24, 2 × 12, 3 × 8, 4 × 6.\nFaktor-faktor dari 24 yaitu: 1, 2, 3, 4, 6, 8, 12, 24.\nJumlah faktor seluruhnya ada 8 bilangan.',
   },
+
+  // --- SOAL 3 ---
   {
     id: 3,
     type: 'pg',
-    topic: 'FPB & KPK',
-    difficulty: 'Sedang',
-    text: 'Ibu Guru memiliki 48 buku tulis, 72 pensil, dan 96 penghapus. Seluruh perlengkapan tersebut akan dibagikan ke sebanyak-banyaknya siswa berprestasi dengan jumlah tiap jenis barang yang sama banyak. Berapa banyak siswa yang menerima dan berapa banyak pensil yang didapat oleh setiap siswa?',
+    topic: 'Bilangan Prima',
+    difficulty: 'Mudah',
+    text: 'Perhatikan bagan bilangan antara 10 sampai 30 pada gambar di atas!\nBilangan-bilangan yang diarsir lingkaran hijau adalah bilangan prima. Banyaknya bilangan prima antara 10 dan 30 adalah...',
+    image: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="130" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <text x="200" y="25" fill="#334155" font-size="12" font-weight="bold" text-anchor="middle">Bilangan Prima antara 10 dan 30</text>
+      <g transform="translate(30, 45)">
+        <!-- Circle 11 -->
+        <circle cx="25" cy="25" r="22" fill="#10B981"/>
+        <text x="25" y="31" fill="#FFFFFF" font-size="14" font-weight="bold" text-anchor="middle">11</text>
+        <!-- Circle 13 -->
+        <circle cx="85" cy="25" r="22" fill="#10B981"/>
+        <text x="85" y="31" fill="#FFFFFF" font-size="14" font-weight="bold" text-anchor="middle">13</text>
+        <!-- Circle 17 -->
+        <circle cx="145" cy="25" r="22" fill="#10B981"/>
+        <text x="145" y="31" fill="#FFFFFF" font-size="14" font-weight="bold" text-anchor="middle">17</text>
+        <!-- Circle 19 -->
+        <circle cx="205" cy="25" r="22" fill="#10B981"/>
+        <text x="205" y="31" fill="#FFFFFF" font-size="14" font-weight="bold" text-anchor="middle">19</text>
+        <!-- Circle 23 -->
+        <circle cx="265" cy="25" r="22" fill="#10B981"/>
+        <text x="265" y="31" fill="#FFFFFF" font-size="14" font-weight="bold" text-anchor="middle">23</text>
+        <!-- Circle 29 -->
+        <circle cx="325" cy="25" r="22" fill="#10B981"/>
+        <text x="325" y="31" fill="#FFFFFF" font-size="14" font-weight="bold" text-anchor="middle">29</text>
+      </g>
+      <text x="200" y="112" fill="#047857" font-size="11" font-weight="medium" text-anchor="middle">Hanya memiliki 2 faktor: angka 1 dan bilangan itu sendiri</text>
+    </svg>`,
     options: [
-      { id: 'A', text: '24 siswa dan masing-masing mendapat 3 pensil' },
-      { id: 'B', text: '24 siswa dan masing-masing mendapat 4 pensil' },
-      { id: 'C', text: '16 siswa dan masing-masing mendapat 3 pensil' },
-      { id: 'D', text: '12 siswa dan masing-masing mendapat 6 pensil' },
+      { id: 'A', text: '5 bilangan' },
+      { id: 'B', text: '6 bilangan' },
+      { id: 'C', text: '7 bilangan' },
+      { id: 'D', text: '8 bilangan' },
     ],
-    correctAnswer: 'A',
+    correctAnswer: 'B',
     explanation:
-      'Mencari pembagian sama banyak menggunakan FPB:\n48 = 2⁴ × 3\n72 = 2³ × 3²\n96 = 2⁵ × 3\nFPB = 2³ × 3 = 8 × 3 = 24 siswa.\nJumlah pensil tiap siswa = 72 ÷ 24 = 3 pensil.',
+      'Bilangan prima adalah bilangan yang hanya mempunyai dua faktor yaitu 1 dan bilangan itu sendiri.\nBilangan prima antara 10 dan 30 adalah: 11, 13, 17, 19, 23, dan 29.\nJumlahnya ada 6 bilangan.',
   },
+
+  // --- SOAL 4 ---
   {
     id: 4,
     type: 'pg',
-    topic: 'KPK (Kelipatan Persekutuan Terkecil)',
-    difficulty: 'Mudah',
-    text: 'Di sebuah pos kamling terdapat tiga lonceng pengingat ronda. Lonceng pertama berbunyi setiap 12 menit, lonceng kedua setiap 15 menit, dan lonceng ketiga setiap 20 menit. Jika ketiga lonceng berbunyi bersamaan pada pukul 08.00, pada pukul berapa ketiga lonceng akan berbunyi bersamaan kembali untuk kedua kalinya?',
+    topic: 'Faktorisasi Prima',
+    difficulty: 'Sedang',
+    text: 'Perhatikan diagram pohon faktor dari bilangan 36 pada gambar di atas!\nBentuk faktorisasi prima dari bilangan 36 yang tepat adalah...',
+    image: `<svg viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="150" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <!-- Top 36 -->
+      <circle cx="200" cy="25" r="16" fill="#1E293B"/>
+      <text x="200" y="30" fill="#FFFFFF" font-size="12" font-weight="bold" text-anchor="middle">36</text>
+      <!-- Line to 2 and 18 -->
+      <line x1="190" y1="38" x2="140" y2="60" stroke="#64748B" stroke-width="2"/>
+      <line x1="210" y1="38" x2="260" y2="60" stroke="#64748B" stroke-width="2"/>
+      <!-- Circle 2 (prime) -->
+      <circle cx="140" cy="65" r="14" fill="#2563EB"/>
+      <text x="140" y="70" fill="#FFFFFF" font-size="12" font-weight="bold" text-anchor="middle">2</text>
+      <!-- Circle 18 -->
+      <circle cx="260" cy="65" r="14" fill="#94A3B8"/>
+      <text x="260" y="70" fill="#FFFFFF" font-size="12" font-weight="bold" text-anchor="middle">18</text>
+      <!-- Line to 2 and 9 -->
+      <line x1="250" y1="78" x2="220" y2="100" stroke="#64748B" stroke-width="2"/>
+      <line x1="270" y1="78" x2="300" y2="100" stroke="#64748B" stroke-width="2"/>
+      <!-- Circle 2 (prime) -->
+      <circle cx="220" cy="105" r="14" fill="#2563EB"/>
+      <text x="220" y="110" fill="#FFFFFF" font-size="12" font-weight="bold" text-anchor="middle">2</text>
+      <!-- Circle 9 -->
+      <circle cx="300" cy="105" r="14" fill="#94A3B8"/>
+      <text x="300" y="110" fill="#FFFFFF" font-size="12" font-weight="bold" text-anchor="middle">9</text>
+      <!-- Line to 3 and 3 -->
+      <line x1="290" y1="117" x2="270" y2="132" stroke="#64748B" stroke-width="2"/>
+      <line x1="310" y1="117" x2="330" y2="132" stroke="#64748B" stroke-width="2"/>
+      <circle cx="270" cy="135" r="12" fill="#2563EB"/>
+      <text x="270" y="139" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">3</text>
+      <circle cx="330" cy="135" r="12" fill="#2563EB"/>
+      <text x="330" y="139" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">3</text>
+      <text x="70" y="135" fill="#2563EB" font-size="11" font-weight="bold">Faktor prima berarsir biru</text>
+    </svg>`,
     options: [
-      { id: 'A', text: '08.45' },
-      { id: 'B', text: '09.00' },
-      { id: 'C', text: '09.15' },
-      { id: 'D', text: '09.30' },
+      { id: 'A', text: '2 × 3²' },
+      { id: 'B', text: '2² × 3²' },
+      { id: 'C', text: '2² × 9' },
+      { id: 'D', text: '4 × 3²' },
     ],
     correctAnswer: 'B',
     explanation:
-      'Mencari waktu bersamaan kembali menggunakan KPK:\n12 = 2² × 3\n15 = 3 × 5\n20 = 2² × 5\nKPK = 2² × 3 × 5 = 4 × 3 × 5 = 60 menit (1 jam).\nKetiga lonceng berbunyi bersamaan lagi pada: 08.00 + 1 jam = 09.00.',
+      'Dari pohon faktor, bilangan prima pembagi 36 adalah 2, 2, 3, dan 3.\nMaka faktorisasi primanya ditulis dalam bentuk perpangkatan:\n36 = 2 × 2 × 3 × 3 = 2² × 3².',
   },
+
+  // --- SOAL 5 ---
   {
     id: 5,
     type: 'pg',
-    topic: 'Perbandingan & Skala',
-    difficulty: 'Mudah',
-    text: 'Jarak antara Kota Denpasar dan Kota Negara pada peta adalah 6 cm. Jika skala yang digunakan pada peta tersebut adalah 1 : 1.500.000, maka jarak sebenarnya antara kedua kota tersebut adalah...',
+    topic: 'Faktorisasi Prima',
+    difficulty: 'Sedang',
+    text: 'Perhatikan pohon faktor bilangan 60 di atas yang belum lengkap!\nAngka yang tepat untuk menggantikan tanda tanya (?) pada lingkaran kuning adalah...',
+    image: `<svg viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="150" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <circle cx="200" cy="25" r="16" fill="#1E293B"/>
+      <text x="200" y="30" fill="#FFFFFF" font-size="12" font-weight="bold" text-anchor="middle">60</text>
+      <line x1="190" y1="38" x2="140" y2="60" stroke="#64748B" stroke-width="2"/>
+      <line x1="210" y1="38" x2="260" y2="60" stroke="#64748B" stroke-width="2"/>
+      <circle cx="140" cy="65" r="14" fill="#2563EB"/>
+      <text x="140" y="70" fill="#FFFFFF" font-size="12" font-weight="bold" text-anchor="middle">2</text>
+      <circle cx="260" cy="65" r="14" fill="#94A3B8"/>
+      <text x="260" y="70" fill="#FFFFFF" font-size="12" font-weight="bold" text-anchor="middle">30</text>
+      <line x1="250" y1="78" x2="220" y2="100" stroke="#64748B" stroke-width="2"/>
+      <line x1="270" y1="78" x2="300" y2="100" stroke="#64748B" stroke-width="2"/>
+      <circle cx="220" cy="105" r="14" fill="#2563EB"/>
+      <text x="220" y="110" fill="#FFFFFF" font-size="12" font-weight="bold" text-anchor="middle">2</text>
+      <circle cx="300" cy="105" r="14" fill="#94A3B8"/>
+      <text x="300" y="110" fill="#FFFFFF" font-size="12" font-weight="bold" text-anchor="middle">15</text>
+      <line x1="290" y1="117" x2="270" y2="132" stroke="#64748B" stroke-width="2"/>
+      <line x1="310" y1="117" x2="330" y2="132" stroke="#64748B" stroke-width="2"/>
+      <circle cx="270" cy="135" r="13" fill="#2563EB"/>
+      <text x="270" y="140" fill="#FFFFFF" font-size="12" font-weight="bold" text-anchor="middle">3</text>
+      <!-- Mystery circle ? -->
+      <circle cx="330" cy="135" r="13" fill="#F59E0B" stroke="#D97706" stroke-width="2"/>
+      <text x="330" y="140" fill="#FFFFFF" font-size="13" font-weight="bold" text-anchor="middle">?</text>
+    </svg>`,
     options: [
-      { id: 'A', text: '75 km' },
-      { id: 'B', text: '90 km' },
-      { id: 'C', text: '120 km' },
-      { id: 'D', text: '150 km' },
+      { id: 'A', text: '3' },
+      { id: 'B', text: '4' },
+      { id: 'C', text: '5' },
+      { id: 'D', text: '6' },
     ],
-    correctAnswer: 'B',
+    correctAnswer: 'C',
     explanation:
-      'Jarak Sebenarnya = Jarak pada Peta ÷ Skala\n= 6 cm × 1.500.000 = 9.000.000 cm.\nUbah cm ke km (dibagi 100.000):\n9.000.000 ÷ 100.000 = 90 km.',
+      'Pada cabang terakhir: 15 dibagi 3 menghasilkan 5.\nKarena 5 adalah bilangan prima, maka angka untuk mengisi tanda (?) adalah 5.\nFaktorisasi prima dari 60 = 2² × 3 × 5.',
   },
+
+  // --- SOAL 6 ---
   {
     id: 6,
     type: 'pg',
-    topic: 'Perbandingan Senilai',
+    topic: 'Faktor Persekutuan',
     difficulty: 'Sedang',
-    text: 'Perbandingan umur Ayah dan Dayu adalah 7 : 3. Jika selisih umur Ayah dan Dayu adalah 28 tahun, berapakah jumlah umur Ayah dan Dayu seluruhnya?',
+    text: 'Perhatikan diagram Venn persekutuan faktor bilangan 12 dan 18 di atas!\nFaktor persekutuan dari 12 dan 18 (bagian irisan tengah) adalah...',
+    image: `<svg viewBox="0 0 400 140" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="140" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <!-- Circle 12 -->
+      <circle cx="160" cy="70" r="50" fill="#3B82F6" fill-opacity="0.15" stroke="#2563EB" stroke-width="2"/>
+      <!-- Circle 18 -->
+      <circle cx="240" cy="70" r="50" fill="#10B981" fill-opacity="0.15" stroke="#059669" stroke-width="2"/>
+      <!-- Label Titles -->
+      <text x="140" y="32" fill="#1D4ED8" font-size="11" font-weight="bold">Faktor 12</text>
+      <text x="235" y="32" fill="#047857" font-size="11" font-weight="bold">Faktor 18</text>
+      <!-- Left only: 4, 12 -->
+      <text x="135" y="65" fill="#1E40AF" font-size="12" font-weight="bold">4</text>
+      <text x="135" y="85" fill="#1E40AF" font-size="12" font-weight="bold">12</text>
+      <!-- Intersection: 1, 2, 3, 6 -->
+      <rect x="185" y="44" width="30" height="52" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+      <text x="200" y="58" fill="#B45309" font-size="10" font-weight="bold" text-anchor="middle">1, 2</text>
+      <text x="200" y="82" fill="#B45309" font-size="10" font-weight="bold" text-anchor="middle">3, 6</text>
+      <!-- Right only: 9, 18 -->
+      <text x="260" y="65" fill="#065F46" font-size="12" font-weight="bold">9</text>
+      <text x="260" y="85" fill="#065F46" font-size="12" font-weight="bold">18</text>
+      <text x="200" y="126" fill="#64748B" font-size="10" text-anchor="middle">Irisan kuning = Faktor Persekutuan</text>
+    </svg>`,
     options: [
-      { id: 'A', text: '56 tahun' },
-      { id: 'B', text: '63 tahun' },
-      { id: 'C', text: '70 tahun' },
-      { id: 'D', text: '77 tahun' },
-    ],
-    correctAnswer: 'C',
-    explanation:
-      'Selisih perbandingan = 7 - 3 = 4 bagian.\nNilai 1 bagian = 28 tahun ÷ 4 = 7 tahun.\nJumlah perbandingan = 7 + 3 = 10 bagian.\nJumlah umur = 10 × 7 tahun = 70 tahun.',
-  },
-  {
-    id: 7,
-    type: 'pg',
-    topic: 'Kecepatan & Waktu Berpapasan',
-    difficulty: 'Sukar',
-    text: 'Jarak antara kota P dan kota Q adalah 180 km. Pak Made mengendarai mobil dari kota P ke kota Q pada pukul 07.15 dengan kecepatan rata-rata 55 km/jam. Pada saat yang sama, Pak Ketut mengendarai sepeda motor dari kota Q ke kota P melalui jalur yang sama dengan kecepatan rata-rata 35 km/jam. Pukul berapakah mereka akan berpapasan di jalan?',
-    options: [
-      { id: 'A', text: '08.45' },
-      { id: 'B', text: '09.00' },
-      { id: 'C', text: '09.15' },
-      { id: 'D', text: '09.30' },
-    ],
-    correctAnswer: 'C',
-    explanation:
-      'Waktu berpapasan = Jarak Total ÷ (Kecepatan 1 + Kecepatan 2)\nKecepatan gabungan = 55 km/jam + 35 km/jam = 90 km/jam.\nWaktu = 180 km ÷ 90 km/jam = 2 jam.\nWaktu berpapasan = 07.15 + 2 jam = 09.15.',
-  },
-  {
-    id: 8,
-    type: 'pg',
-    topic: 'Debit Air & Volume',
-    difficulty: 'Sedang',
-    text: 'Sebuah bak penampungan air berbentuk balok memiliki ukuran panjang 120 cm, lebar 80 cm, dan tinggi 50 cm. Bak tersebut diisi air dari kran yang memiliki debit aliran tetap 20 liter per menit. Waktu yang diperlukan untuk mengisi bak penampungan tersebut dari kosong hingga penuh adalah...',
-    options: [
-      { id: 'A', text: '18 menit' },
-      { id: 'B', text: '24 menit' },
-      { id: 'C', text: '32 menit' },
-      { id: 'D', text: '48 menit' },
-    ],
-    correctAnswer: 'B',
-    explanation:
-      'Volume bak = panjang × lebar × tinggi = 120 cm × 80 cm × 50 cm = 480.000 cm³.\n1 liter = 1.000 cm³, maka Volume = 480.000 ÷ 1.000 = 480 liter.\nWaktu = Volume ÷ Debit = 480 liter ÷ 20 liter/menit = 24 menit.',
-  },
-  {
-    id: 9,
-    type: 'pg',
-    topic: 'Keliling Lingkaran',
-    difficulty: 'Mudah',
-    text: 'Sebuah taman kota di Jembrana berbentuk lingkaran dengan panjang diameter 28 meter. Di sekeliling tepi taman tersebut akan dipasangi lampu penerangan dengan jarak antarlampu 4 meter. Berapa banyak lampu penerangan yang dibutuhkan? (Gunakan π = 22/7)',
-    options: [
-      { id: 'A', text: '22 buah' },
-      { id: 'B', text: '24 buah' },
-      { id: 'C', text: '28 buah' },
-      { id: 'D', text: '44 buah' },
+      { id: 'A', text: '1, 2, 3, 6' },
+      { id: 'B', text: '1, 2, 4, 6' },
+      { id: 'C', text: '2, 3, 6, 9' },
+      { id: 'D', text: '1, 3, 6, 12' },
     ],
     correctAnswer: 'A',
     explanation:
-      'Keliling lingkaran = π × diameter = 22/7 × 28 m = 88 meter.\nBanyak lampu = Keliling ÷ Jarak antarlampu = 88 m ÷ 4 m = 22 buah.',
+      'Faktor dari 12 = { 1, 2, 3, 4, 6, 12 }\nFaktor dari 18 = { 1, 2, 3, 6, 9, 18 }\nFaktor yang sama (bersekutu) pada kedua bilangan tersebut adalah 1, 2, 3, dan 6.',
   },
+
+  // --- SOAL 7 ---
+  {
+    id: 7,
+    type: 'pg',
+    topic: 'Faktor Persekutuan',
+    difficulty: 'Sedang',
+    text: 'Perhatikan diagram irisan faktor dari bilangan 20 dan 30 di atas!\nFaktor persekutuan terbesar (angka paling besar di bagian irisan) dari 20 dan 30 adalah...',
+    image: `<svg viewBox="0 0 400 140" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="140" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <circle cx="160" cy="70" r="50" fill="#6366F1" fill-opacity="0.15" stroke="#4F46E5" stroke-width="2"/>
+      <circle cx="240" cy="70" r="50" fill="#EC4899" fill-opacity="0.15" stroke="#DB2777" stroke-width="2"/>
+      <text x="135" y="32" fill="#4338CA" font-size="11" font-weight="bold">Faktor 20</text>
+      <text x="235" y="32" fill="#BE185D" font-size="11" font-weight="bold">Faktor 30</text>
+      <text x="130" y="65" fill="#312E81" font-size="11" font-weight="bold">4, 20</text>
+      <!-- Intersection -->
+      <rect x="180" y="44" width="40" height="52" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+      <text x="200" y="60" fill="#92400E" font-size="11" font-weight="bold" text-anchor="middle">1, 2</text>
+      <text x="200" y="82" fill="#92400E" font-size="12" font-weight="extrabold" text-anchor="middle">5, 10</text>
+      <text x="260" y="65" fill="#831843" font-size="11" font-weight="bold">3, 6, 15, 30</text>
+      <text x="200" y="126" fill="#64748B" font-size="10" text-anchor="middle">Faktor persekutuan: { 1, 2, 5, 10 }</text>
+    </svg>`,
+    options: [
+      { id: 'A', text: '2' },
+      { id: 'B', text: '5' },
+      { id: 'C', text: '10' },
+      { id: 'D', text: '20' },
+    ],
+    correctAnswer: 'C',
+    explanation:
+      'Faktor dari 20 = {1, 2, 4, 5, 10, 20}\nFaktor dari 30 = {1, 2, 3, 5, 6, 10, 15, 30}\nFaktor persekutuan = {1, 2, 5, 10}.\nNilai yang terbesar adalah 10, sehingga FPB dari 20 dan 30 adalah 10.',
+  },
+
+  // --- SOAL 8 ---
+  {
+    id: 8,
+    type: 'pg',
+    topic: 'FPB (Faktor Persekutuan Terbesar)',
+    difficulty: 'Sedang',
+    text: 'Perhatikan faktorisasi prima bilangan 16 dan 24 pada gambar di atas!\n16 = 2⁴\n24 = 2³ × 3\nFaktor Persekutuan Terbesar (FPB) dari 16 dan 24 adalah...',
+    image: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="130" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <g transform="translate(30, 20)">
+        <rect x="0" y="0" width="160" height="80" rx="8" fill="#EFF6FF" stroke="#3B82F6"/>
+        <text x="80" y="24" fill="#1E40AF" font-size="12" font-weight="bold" text-anchor="middle">Bilangan 16</text>
+        <text x="80" y="48" fill="#1E3A8A" font-size="13" font-weight="extrabold" text-anchor="middle">2 × 2 × 2 × 2</text>
+        <text x="80" y="68" fill="#2563EB" font-size="11" font-weight="bold" text-anchor="middle">= 2⁴</text>
+      </g>
+      <g transform="translate(210, 20)">
+        <rect x="0" y="0" width="160" height="80" rx="8" fill="#F0FDF4" stroke="#22C55E"/>
+        <text x="80" y="24" fill="#166534" font-size="12" font-weight="bold" text-anchor="middle">Bilangan 24</text>
+        <text x="80" y="48" fill="#14532D" font-size="13" font-weight="extrabold" text-anchor="middle">2 × 2 × 2 × 3</text>
+        <text x="80" y="68" fill="#16A34A" font-size="11" font-weight="bold" text-anchor="middle">= 2³ × 3</text>
+      </g>
+      <text x="200" y="118" fill="#475569" font-size="11" text-anchor="middle">FPB = Ambil faktor sama berpangkat terkecil (2³)</text>
+    </svg>`,
+    options: [
+      { id: 'A', text: '4' },
+      { id: 'B', text: '6' },
+      { id: 'C', text: '8' },
+      { id: 'D', text: '12' },
+    ],
+    correctAnswer: 'C',
+    explanation:
+      'Untuk mencari FPB menggunakan faktorisasi prima, pilih faktor prima yang sama dengan pangkat terkecil.\nFaktor prima yang sama antara 16 (2⁴) dan 24 (2³ × 3) adalah 2.\nPangkat terkecil adalah 2³.\nFPB = 2³ = 2 × 2 × 2 = 8.',
+  },
+
+  // --- SOAL 9 ---
+  {
+    id: 9,
+    type: 'pg',
+    topic: 'FPB (Metode Tabel Sengkedan)',
+    difficulty: 'Sedang',
+    text: 'Perhatikan tabel pembagian prima bersama (metode sengkedan) di atas untuk bilangan 24 dan 36.\nFPB dari 24 dan 36 adalah hasil kali bilangan prima yang dapat membagi kedua bilangan secara bersamaan (bertanda bintang *), yaitu...',
+    image: `<svg viewBox="0 0 400 140" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="140" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <text x="200" y="22" fill="#1E293B" font-size="12" font-weight="bold" text-anchor="middle">Tabel Pembagian Prima Bersusun (Sengkedan)</text>
+      <g transform="translate(60, 35)">
+        <!-- Table Header -->
+        <rect x="0" y="0" width="80" height="20" fill="#3B82F6"/>
+        <text x="40" y="14" fill="#FFFFFF" font-size="10" font-weight="bold" text-anchor="middle">Pembagi</text>
+        <rect x="80" y="0" width="100" height="20" fill="#1E40AF"/>
+        <text x="130" y="14" fill="#FFFFFF" font-size="10" font-weight="bold" text-anchor="middle">24</text>
+        <rect x="180" y="0" width="100" height="20" fill="#1E40AF"/>
+        <text x="230" y="14" fill="#FFFFFF" font-size="10" font-weight="bold" text-anchor="middle">36</text>
+        <!-- Row 1 -->
+        <rect x="0" y="20" width="80" height="18" fill="#EFF6FF" stroke="#BFDBFE"/>
+        <text x="40" y="33" fill="#1D4ED8" font-size="10" font-weight="bold" text-anchor="middle">2 *</text>
+        <rect x="80" y="20" width="100" height="18" fill="#FFFFFF" stroke="#BFDBFE"/>
+        <text x="130" y="33" fill="#1E293B" font-size="10" text-anchor="middle">12</text>
+        <rect x="180" y="20" width="100" height="18" fill="#FFFFFF" stroke="#BFDBFE"/>
+        <text x="230" y="33" fill="#1E293B" font-size="10" text-anchor="middle">18</text>
+        <!-- Row 2 -->
+        <rect x="0" y="38" width="80" height="18" fill="#EFF6FF" stroke="#BFDBFE"/>
+        <text x="40" y="51" fill="#1D4ED8" font-size="10" font-weight="bold" text-anchor="middle">2 *</text>
+        <rect x="80" y="38" width="100" height="18" fill="#FFFFFF" stroke="#BFDBFE"/>
+        <text x="130" y="51" fill="#1E293B" font-size="10" text-anchor="middle">6</text>
+        <rect x="180" y="38" width="100" height="18" fill="#FFFFFF" stroke="#BFDBFE"/>
+        <text x="230" y="51" fill="#1E293B" font-size="10" text-anchor="middle">9</text>
+        <!-- Row 3 -->
+        <rect x="0" y="56" width="80" height="18" fill="#EFF6FF" stroke="#BFDBFE"/>
+        <text x="40" y="69" fill="#1D4ED8" font-size="10" font-weight="bold" text-anchor="middle">3 *</text>
+        <rect x="80" y="56" width="100" height="18" fill="#FFFFFF" stroke="#BFDBFE"/>
+        <text x="130" y="69" fill="#1E293B" font-size="10" text-anchor="middle">2</text>
+        <rect x="180" y="56" width="100" height="18" fill="#FFFFFF" stroke="#BFDBFE"/>
+        <text x="230" y="69" fill="#1E293B" font-size="10" text-anchor="middle">3</text>
+      </g>
+      <text x="200" y="128" fill="#047857" font-size="10" font-weight="bold" text-anchor="middle">Tanda (*) membagi habis kedua bilangan</text>
+    </svg>`,
+    options: [
+      { id: 'A', text: '6' },
+      { id: 'B', text: '12' },
+      { id: 'C', text: '18' },
+      { id: 'D', text: '24' },
+    ],
+    correctAnswer: 'B',
+    explanation:
+      'Bilangan prima yang dapat membagi 24 dan 36 secara bersamaan adalah 2, 2, dan 3.\nFPB = 2 × 2 × 3 = 12.',
+  },
+
+  // --- SOAL 10 ---
   {
     id: 10,
     type: 'pg',
-    topic: 'Luas Gabungan Bangun Datar',
-    difficulty: 'Sedang',
-    text: 'Sebuah bidang datar gabungan terdiri dari persegi panjang berukuran panjang 20 cm dan lebar 14 cm, serta sebuah setengah lingkaran yang menempel berhimpit pada sisi lebarnya (diameter setengah lingkaran = 14 cm). Luas total bidang gabungan tersebut adalah... (Gunakan π = 22/7)',
+    topic: 'FPB Tiga Bilangan',
+    difficulty: 'Sukar',
+    text: 'Perhatikan faktorisasi prima dari tiga bilangan di atas!\n18 = 2 × 3²\n27 = 3³\n36 = 2² × 3²\nFaktor Persekutuan Terbesar (FPB) dari 18, 27, dan 36 adalah...',
+    image: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="130" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <rect x="0" y="0" width="110" height="75" rx="8" fill="#EFF6FF" stroke="#3B82F6"/>
+        <text x="55" y="24" fill="#1E40AF" font-size="11" font-weight="bold" text-anchor="middle">18</text>
+        <text x="55" y="48" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">2 × 3²</text>
+      </g>
+      <g transform="translate(145, 20)">
+        <rect x="0" y="0" width="110" height="75" rx="8" fill="#FEF3C7" stroke="#F59E0B"/>
+        <text x="55" y="24" fill="#B45309" font-size="11" font-weight="bold" text-anchor="middle">27</text>
+        <text x="55" y="48" fill="#92400E" font-size="12" font-weight="bold" text-anchor="middle">3³</text>
+      </g>
+      <g transform="translate(270, 20)">
+        <rect x="0" y="0" width="110" height="75" rx="8" fill="#F0FDF4" stroke="#22C55E"/>
+        <text x="55" y="24" fill="#166534" font-size="11" font-weight="bold" text-anchor="middle">36</text>
+        <text x="55" y="48" fill="#14532D" font-size="12" font-weight="bold" text-anchor="middle">2² × 3²</text>
+      </g>
+      <text x="200" y="115" fill="#475569" font-size="11" text-anchor="middle">Faktor prima yang ada di ketiga bilangan hanya angka 3</text>
+    </svg>`,
     options: [
-      { id: 'A', text: '318 cm²' },
-      { id: 'B', text: '357 cm²' },
-      { id: 'C', text: '394 cm²' },
-      { id: 'D', text: '434 cm²' },
+      { id: 'A', text: '3' },
+      { id: 'B', text: '6' },
+      { id: 'C', text: '9' },
+      { id: 'D', text: '18' },
     ],
-    correctAnswer: 'B',
+    correctAnswer: 'C',
     explanation:
-      'Luas persegi panjang = p × l = 20 cm × 14 cm = 280 cm².\nJari-jari lingkaran (r) = 14 ÷ 2 = 7 cm.\nLuas setengah lingkaran = 1/2 × π × r² = 1/2 × (22/7) × 7 × 7 = 77 cm².\nLuas gabungan = 280 cm² + 77 cm² = 357 cm².',
+      'Faktor prima yang dimiliki oleh ketiga bilangan sekaligus adalah hanya angka 3.\nPangkat terkecil dari 3 adalah 3² (yaitu pada 18 dan 36).\nMaka FPB = 3² = 9.',
   },
+
+  // --- SOAL 11 ---
   {
     id: 11,
     type: 'pg',
-    topic: 'Volume Bangun Ruang (Tabung)',
-    difficulty: 'Sukar',
-    text: 'Sebuah drum penampung minyak berbentuk tabung memiliki jari-jari alas 35 cm dan tinggi 100 cm. Jika drum tersebut saat ini sudah terisi minyak sebanyak 3/5 bagian, berapa liter minyak yang masih harus dituangkan agar drum tersebut terisi penuh? (Gunakan π = 22/7)',
+    topic: 'Kelipatan Bilangan',
+    difficulty: 'Mudah',
+    text: 'Perhatikan garis bilangan lompatan kelipatan 6 pada gambar di atas!\nBilangan kelipatan 6 yang nilainya kurang dari 40 adalah...',
+    image: `<svg viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="120" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <line x1="20" y1="70" x2="380" y2="70" stroke="#94A3B8" stroke-width="2"/>
+      <!-- Jumps -->
+      <path d="M 30 70 Q 55 35 80 70" fill="none" stroke="#2563EB" stroke-width="2"/>
+      <path d="M 80 70 Q 105 35 130 70" fill="none" stroke="#2563EB" stroke-width="2"/>
+      <path d="M 130 70 Q 155 35 180 70" fill="none" stroke="#2563EB" stroke-width="2"/>
+      <path d="M 180 70 Q 205 35 230 70" fill="none" stroke="#2563EB" stroke-width="2"/>
+      <path d="M 230 70 Q 255 35 280 70" fill="none" stroke="#2563EB" stroke-width="2"/>
+      <path d="M 280 70 Q 305 35 330 70" fill="none" stroke="#2563EB" stroke-width="2"/>
+      <!-- Dots & Labels -->
+      <circle cx="30" cy="70" r="4" fill="#1E293B"/><text x="30" y="88" font-size="10" font-weight="bold" text-anchor="middle">0</text>
+      <circle cx="80" cy="70" r="4" fill="#2563EB"/><text x="80" y="88" font-size="10" font-weight="bold" text-anchor="middle">6</text>
+      <circle cx="130" cy="70" r="4" fill="#2563EB"/><text x="130" y="88" font-size="10" font-weight="bold" text-anchor="middle">12</text>
+      <circle cx="180" cy="70" r="4" fill="#2563EB"/><text x="180" y="88" font-size="10" font-weight="bold" text-anchor="middle">18</text>
+      <circle cx="230" cy="70" r="4" fill="#2563EB"/><text x="230" y="88" font-size="10" font-weight="bold" text-anchor="middle">24</text>
+      <circle cx="280" cy="70" r="4" fill="#2563EB"/><text x="280" y="88" font-size="10" font-weight="bold" text-anchor="middle">30</text>
+      <circle cx="330" cy="70" r="4" fill="#2563EB"/><text x="330" y="88" font-size="10" font-weight="bold" text-anchor="middle">36</text>
+      <text x="200" y="24" fill="#1E40AF" font-size="11" font-weight="bold" text-anchor="middle">Lompatan +6 setiap langkah</text>
+    </svg>`,
     options: [
-      { id: 'A', text: '124 liter' },
-      { id: 'B', text: '154 liter' },
-      { id: 'C', text: '231 liter' },
-      { id: 'D', text: '385 liter' },
+      { id: 'A', text: '6, 12, 18, 24, 30, 36' },
+      { id: 'B', text: '6, 12, 18, 24, 32, 36' },
+      { id: 'C', text: '1, 2, 3, 6, 12, 18' },
+      { id: 'D', text: '6, 12, 18, 24, 30, 36, 42' },
     ],
-    correctAnswer: 'B',
+    correctAnswer: 'A',
     explanation:
-      'Volume tabung penuh = π × r² × t = (22/7) × 35 × 35 × 100 = 385.000 cm³.\n1 liter = 1.000 cm³, maka Volume = 385 liter.\nBagian yang belum terisi = 1 - 3/5 = 2/5 bagian.\nVolume yang harus ditambahkan = 2/5 × 385 liter = 154 liter.',
+      'Kelipatan 6 diperoleh dari perkalian 6 dengan bilangan bulat positif:\n6 × 1 = 6\n6 × 2 = 12\n6 × 3 = 18\n6 × 4 = 24\n6 × 5 = 30\n6 × 6 = 36\n(Kelipatan berikutnya 42 sudah melebihi 40).\nJadi kelipatan 6 yang kurang dari 40 adalah 6, 12, 18, 24, 30, dan 36.',
   },
+
+  // --- SOAL 12 ---
   {
     id: 12,
     type: 'pg',
-    topic: 'Luas Permukaan Kubus',
-    difficulty: 'Mudah',
-    text: 'Edo ingin membungkus kotak kado berbentuk kubus dengan kertas kado berwarna emas. Jika panjang rusuk kotak kado tersebut adalah 15 cm, luas minimal kertas kado yang dibutuhkan untuk menutupi seluruh permukaan luar kotak adalah...',
+    topic: 'Kelipatan Persekutuan',
+    difficulty: 'Sedang',
+    text: 'Perhatikan bagan garis lompatan kelipatan bilangan 4 dan 6 pada gambar di atas!\nKelipatan persekutuan terkecil (titik temu pertama kali selain angka 0) dari bilangan 4 dan 6 adalah...',
+    image: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="130" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <!-- Line 4 -->
+      <text x="35" y="42" fill="#0284C7" font-size="11" font-weight="bold">Kelipatan 4:</text>
+      <text x="120" y="42" fill="#0369A1" font-size="11">4,  8,  <tspan fill="#DC2626" font-weight="bold">12</tspan>,  16,  20,  <tspan fill="#DC2626" font-weight="bold">24</tspan>,  28...</text>
+      <!-- Line 6 -->
+      <text x="35" y="75" fill="#16A34A" font-size="11" font-weight="bold">Kelipatan 6:</text>
+      <text x="120" y="75" fill="#15803D" font-size="11">6,  <tspan fill="#DC2626" font-weight="bold">12</tspan>,  18,  <tspan fill="#DC2626" font-weight="bold">24</tspan>,  30,  36...</text>
+      <!-- Highlight box for 12 -->
+      <rect x="145" y="24" width="26" height="64" rx="4" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="3 3"/>
+      <text x="200" y="112" fill="#DC2626" font-size="11" font-weight="bold" text-anchor="middle">Titik Temu Pertama = Angka 12 (KPK)</text>
+    </svg>`,
     options: [
-      { id: 'A', text: '900 cm²' },
-      { id: 'B', text: '1.125 cm²' },
-      { id: 'C', text: '1.350 cm²' },
-      { id: 'D', text: '3.375 cm²' },
+      { id: 'A', text: '12' },
+      { id: 'B', text: '18' },
+      { id: 'C', text: '24' },
+      { id: 'D', text: '36' },
     ],
-    correctAnswer: 'C',
+    correctAnswer: 'A',
     explanation:
-      'Kubus memiliki 6 sisi persegi yang identik.\nLuas permukaan kubus = 6 × rusuk² = 6 × 15 cm × 15 cm = 6 × 225 cm² = 1.350 cm².',
+      'Kelipatan 4 = 4, 8, 12, 16, 20, 24, 28, ...\nKelipatan 6 = 6, 12, 18, 24, 30, 36, ...\nKelipatan persekutuannya adalah 12, 24, 36, ...\nKelipatan persekutuan yang paling kecil (KPK) adalah 12.',
   },
+
+  // --- SOAL 13 ---
   {
     id: 13,
     type: 'pg',
-    topic: 'Statistika (Rata-rata / Mean)',
-    difficulty: 'Mudah',
-    text: 'Berikut adalah perolehan nilai ulangan matematika harian dari 8 orang siswa kelas VI: 75, 80, 85, 70, 90, 85, 75, dan 80. Berapakah nilai rata-rata (mean) dari data nilai ulangan tersebut?',
+    topic: 'KPK (Kelipatan Persekutuan Terkecil)',
+    difficulty: 'Sedang',
+    text: 'Perhatikan garis lompatan kelipatan 8 dan 12 pada gambar di atas!\nKelipatan Persekutuan Terkecil (KPK) dari 8 dan 12 adalah...',
+    image: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="130" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <g transform="translate(40, 20)">
+        <rect x="0" y="0" width="150" height="70" rx="8" fill="#F0FDF4" stroke="#22C55E"/>
+        <text x="75" y="22" fill="#166534" font-size="11" font-weight="bold" text-anchor="middle">Kelipatan 8</text>
+        <text x="75" y="46" fill="#14532D" font-size="11" text-anchor="middle">8, 16, <tspan fill="#DC2626" font-weight="bold">24</tspan>, 32, 40...</text>
+      </g>
+      <g transform="translate(210, 20)">
+        <rect x="0" y="0" width="150" height="70" rx="8" fill="#EFF6FF" stroke="#3B82F6"/>
+        <text x="75" y="22" fill="#1E40AF" font-size="11" font-weight="bold" text-anchor="middle">Kelipatan 12</text>
+        <text x="75" y="46" fill="#1E3A8A" font-size="11" text-anchor="middle">12, <tspan fill="#DC2626" font-weight="bold">24</tspan>, 36, 48...</text>
+      </g>
+      <text x="200" y="112" fill="#DC2626" font-size="12" font-weight="bold" text-anchor="middle">Angka persekutuan pertama: 24</text>
+    </svg>`,
     options: [
-      { id: 'A', text: '78,5' },
-      { id: 'B', text: '79,0' },
-      { id: 'C', text: '80,0' },
-      { id: 'D', text: '81,5' },
+      { id: 'A', text: '16' },
+      { id: 'B', text: '24' },
+      { id: 'C', text: '36' },
+      { id: 'D', text: '48' },
     ],
-    correctAnswer: 'C',
+    correctAnswer: 'B',
     explanation:
-      'Jumlah total nilai = 75 + 80 + 85 + 70 + 90 + 85 + 75 + 80 = 640.\nBanyak siswa = 8 orang.\nNilai rata-rata = 640 ÷ 8 = 80,0.',
+      'Kelipatan 8: 8, 16, 24, 32, 40, 48, ...\nKelipatan 12: 12, 24, 36, 48, ...\nKelipatan persekutuan pertama yang sama adalah 24.\nJadi KPK dari 8 dan 12 adalah 24.',
   },
+
+  // --- SOAL 14 ---
   {
     id: 14,
     type: 'pg',
-    topic: 'Statistika (Median & Modus)',
+    topic: 'KPK (Faktorisasi Prima)',
     difficulty: 'Sedang',
-    text: 'Data berat badan (dalam kg) sembilan siswa peserta lomba cerdas cermat adalah sebagai berikut: 34, 36, 35, 34, 37, 36, 35, 36, 38. Nilai median dan modus dari data berat badan tersebut berturut-turut adalah...',
+    text: 'Perhatikan pohon faktor dari bilangan 15 dan 20 di atas!\n15 = 3 × 5\n20 = 2² × 5\nKelipatan Persekutuan Terkecil (KPK) dari 15 dan 20 adalah...',
+    image: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="130" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <g transform="translate(30, 20)">
+        <rect x="0" y="0" width="160" height="75" rx="8" fill="#FFFBEB" stroke="#F59E0B"/>
+        <text x="80" y="24" fill="#B45309" font-size="12" font-weight="bold" text-anchor="middle">Bilangan 15</text>
+        <text x="80" y="52" fill="#92400E" font-size="13" font-weight="bold" text-anchor="middle">3 × 5</text>
+      </g>
+      <g transform="translate(210, 20)">
+        <rect x="0" y="0" width="160" height="75" rx="8" fill="#EFF6FF" stroke="#3B82F6"/>
+        <text x="80" y="24" fill="#1E40AF" font-size="12" font-weight="bold" text-anchor="middle">Bilangan 20</text>
+        <text x="80" y="52" fill="#1E3A8A" font-size="13" font-weight="bold" text-anchor="middle">2² × 5</text>
+      </g>
+      <text x="200" y="115" fill="#475569" font-size="11" text-anchor="middle">KPK = Kalikan semua faktor dengan pangkat terbesar: 2² × 3 × 5</text>
+    </svg>`,
     options: [
-      { id: 'A', text: '35 kg dan 34 kg' },
-      { id: 'B', text: '36 kg dan 36 kg' },
-      { id: 'C', text: '36 kg dan 35 kg' },
-      { id: 'D', text: '35 kg dan 36 kg' },
+      { id: 'A', text: '30' },
+      { id: 'B', text: '45' },
+      { id: 'C', text: '60' },
+      { id: 'D', text: '120' },
     ],
-    correctAnswer: 'B',
+    correctAnswer: 'C',
     explanation:
-      'Urutkan data dari terkecil ke terbesar: 34, 34, 35, 35, 36, 36, 36, 37, 38 (total 9 data).\nMedian (nilai tengah, data ke-5) = 36 kg.\nModus (nilai yang paling sering muncul) = 36 kg (muncul 3 kali).\nJadi, median = 36 kg dan modus = 36 kg.',
+      'Untuk mencari KPK dari faktorisasi prima, kalikan semua faktor prima yang ada dengan pangkat terbesar.\nFaktor-faktor yang ada: 2², 3, dan 5.\nKPK = 2² × 3 × 5 = 4 × 3 × 5 = 60.',
   },
+
+  // --- SOAL 15 ---
   {
     id: 15,
     type: 'pg',
-    topic: 'Aritmatika Sosial (Diskon)',
-    difficulty: 'Mudah',
-    text: 'Dalam rangka Hari Belanja Pendidikan, Toko Seragam Pelajar memberikan potongan harga (diskon) sebesar 25% untuk sepasang sepatu sekolah. Jika harga sepasang sepatu sebelum diskon adalah Rp160.000,00, berapakah jumlah uang yang harus dibayarkan oleh pembeli?',
+    topic: 'KPK Tiga Bilangan',
+    difficulty: 'Sukar',
+    text: 'Perhatikan tabel sengkedan pembagian prima untuk tiga bilangan (6, 8, dan 12) di atas!\nNilai KPK dari 6, 8, dan 12 adalah...',
+    image: `<svg viewBox="0 0 400 140" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="140" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <g transform="translate(45, 20)">
+        <rect x="0" y="0" width="70" height="22" fill="#0284C7"/>
+        <text x="35" y="15" fill="#FFFFFF" font-size="10" font-weight="bold" text-anchor="middle">Bagi</text>
+        <rect x="70" y="0" width="80" height="22" fill="#0369A1"/>
+        <text x="110" y="15" fill="#FFFFFF" font-size="10" font-weight="bold" text-anchor="middle">6</text>
+        <rect x="150" y="0" width="80" height="22" fill="#0369A1"/>
+        <text x="190" y="15" fill="#FFFFFF" font-size="10" font-weight="bold" text-anchor="middle">8</text>
+        <rect x="230" y="0" width="80" height="22" fill="#0369A1"/>
+        <text x="270" y="15" fill="#FFFFFF" font-size="10" font-weight="bold" text-anchor="middle">12</text>
+        <!-- Rows -->
+        <rect x="0" y="22" width="310" height="18" fill="#F0F9FF" stroke="#E0F2FE"/>
+        <text x="35" y="35" fill="#0369A1" font-size="10" font-weight="bold" text-anchor="middle">2</text>
+        <text x="110" y="35" font-size="10" text-anchor="middle">3</text>
+        <text x="190" y="35" font-size="10" text-anchor="middle">4</text>
+        <text x="270" y="35" font-size="10" text-anchor="middle">6</text>
+        <rect x="0" y="40" width="310" height="18" fill="#FFFFFF" stroke="#E0F2FE"/>
+        <text x="35" y="53" fill="#0369A1" font-size="10" font-weight="bold" text-anchor="middle">2</text>
+        <text x="110" y="53" font-size="10" text-anchor="middle">3</text>
+        <text x="190" y="53" font-size="10" text-anchor="middle">2</text>
+        <text x="270" y="53" font-size="10" text-anchor="middle">3</text>
+        <rect x="0" y="58" width="310" height="18" fill="#F0F9FF" stroke="#E0F2FE"/>
+        <text x="35" y="71" fill="#0369A1" font-size="10" font-weight="bold" text-anchor="middle">2</text>
+        <text x="110" y="71" font-size="10" text-anchor="middle">3</text>
+        <text x="190" y="71" font-size="10" text-anchor="middle">1</text>
+        <text x="270" y="71" font-size="10" text-anchor="middle">3</text>
+        <rect x="0" y="76" width="310" height="18" fill="#FFFFFF" stroke="#E0F2FE"/>
+        <text x="35" y="89" fill="#0369A1" font-size="10" font-weight="bold" text-anchor="middle">3</text>
+        <text x="110" y="89" font-size="10" text-anchor="middle">1</text>
+        <text x="190" y="89" font-size="10" text-anchor="middle">1</text>
+        <text x="270" y="89" font-size="10" text-anchor="middle">1</text>
+      </g>
+      <text x="200" y="128" fill="#0369A1" font-size="11" font-weight="bold" text-anchor="middle">KPK = 2 × 2 × 2 × 3 = 2³ × 3</text>
+    </svg>`,
     options: [
-      { id: 'A', text: 'Rp110.000,00' },
-      { id: 'B', text: 'Rp120.000,00' },
-      { id: 'C', text: 'Rp125.000,00' },
-      { id: 'D', text: 'Rp135.000,00' },
+      { id: 'A', text: '18' },
+      { id: 'B', text: '24' },
+      { id: 'C', text: '36' },
+      { id: 'D', text: '48' },
     ],
     correctAnswer: 'B',
     explanation:
-      'Besar diskon = 25% × Rp160.000,00 = (25/100) × 160.000 = Rp40.000,00.\nHarga setelah diskon = Rp160.000,00 - Rp40.000,00 = Rp120.000,00.',
+      'Faktorisasi prima ketiga bilangan:\n6 = 2 × 3\n8 = 2³\n12 = 2² × 3\nKPK = 2³ × 3 = 8 × 3 = 24.',
   },
+
+  // --- SOAL 16 ---
   {
     id: 16,
     type: 'pg',
-    topic: 'Pengolahan Data (Diagram Lingkaran)',
+    topic: 'Penerapan FPB (Soal Cerita)',
     difficulty: 'Sedang',
-    text: 'Sebuah diagram lingkaran menunjukkan pilihan kegiatan ekstrakurikuler dari 120 siswa kelas VI di Sekolah Dasar: Pramuka 35%, Bulu Tangkis 25%, Seni Tari 15%, dan sisanya Robotika. Berapakah banyak siswa yang memilih ekstrakurikuler Robotika?',
+    text: 'Ibu guru Komang Ayuni memiliki 30 buah jeruk dan 45 buah apel.\nSemua buah tersebut akan dimasukkan ke dalam beberapa kantong plastik dengan jumlah jeruk dan apel yang sama banyak pada setiap kantong.\nBerapa banyak kantong plastik terbanyak yang diperlukan oleh Ibu guru?',
+    image: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="130" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <g transform="translate(30, 20)">
+        <rect x="0" y="0" width="160" height="75" rx="10" fill="#FFF7ED" stroke="#F97316"/>
+        <circle cx="45" cy="38" r="20" fill="#EA580C"/>
+        <text x="45" y="44" fill="#FFFFFF" font-size="14" font-weight="bold" text-anchor="middle">🍊</text>
+        <text x="110" y="34" fill="#9A3412" font-size="12" font-weight="bold">30 Jeruk</text>
+        <text x="110" y="52" fill="#C2410C" font-size="10">2 × 3 × 5</text>
+      </g>
+      <g transform="translate(210, 20)">
+        <rect x="0" y="0" width="160" height="75" rx="10" fill="#FEF2F2" stroke="#EF4444"/>
+        <circle cx="45" cy="38" r="20" fill="#DC2626"/>
+        <text x="45" y="44" fill="#FFFFFF" font-size="14" font-weight="bold" text-anchor="middle">🍎</text>
+        <text x="110" y="34" fill="#991B1B" font-size="12" font-weight="bold">45 Apel</text>
+        <text x="110" y="52" fill="#B91C1C" font-size="10">3² × 5</text>
+      </g>
+      <text x="200" y="115" fill="#475569" font-size="11" text-anchor="middle">Membagi sama banyak ke wadah terbanyak = Konsep FPB</text>
+    </svg>`,
     options: [
-      { id: 'A', text: '24 siswa' },
-      { id: 'B', text: '30 siswa' },
-      { id: 'C', text: '36 siswa' },
-      { id: 'D', text: '42 siswa' },
+      { id: 'A', text: '5 kantong' },
+      { id: 'B', text: '10 kantong' },
+      { id: 'C', text: '15 kantong' },
+      { id: 'D', text: '30 kantong' },
     ],
-    correctAnswer: 'B',
+    correctAnswer: 'C',
     explanation:
-      'Total persentase satu lingkaran penuh = 100%.\nPersentase Robotika = 100% - (35% + 25% + 15%) = 100% - 75% = 25%.\nBanyak siswa Robotika = 25% × 120 siswa = (25/100) × 120 = 30 siswa.',
+      'Membagi sejumlah barang menjadi sama banyak ke sebanyak-banyaknya kantong menggunakan konsep FPB.\n30 = 2 × 3 × 5\n45 = 3² × 5\nFPB = 3 × 5 = 15 kantong plastik.',
   },
+
+  // --- SOAL 17 ---
   {
     id: 17,
     type: 'pg',
-    topic: 'Pangkat dan Akar Pangkat Tiga',
+    topic: 'Penerapan FPB (Soal Cerita)',
     difficulty: 'Sedang',
-    text: 'Sebuah bak penampungan air berbentuk kubus memiliki volume 91.125 cm³. Panjang rusuk bagian dalam bak kubus tersebut adalah...',
+    text: 'Berdasarkan soal nomor 16 di atas, jika Ibu guru membagi 30 jeruk dan 45 apel ke dalam 15 kantong plastik secara merata,\nmaka masing-masing kantong akan berisi...',
+    image: `<svg viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="120" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <g transform="translate(110, 20)">
+        <rect x="0" y="0" width="180" height="60" rx="10" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+        <text x="90" y="24" fill="#B45309" font-size="12" font-weight="bold" text-anchor="middle">Isi 1 Kantong Plastik</text>
+        <text x="90" y="46" fill="#92400E" font-size="12" text-anchor="middle">... Jeruk &amp; ... Apel?</text>
+      </g>
+      <text x="200" y="104" fill="#475569" font-size="11" text-anchor="middle">Jumlah buah dibagi dengan FPB (15 kantong)</text>
+    </svg>`,
     options: [
-      { id: 'A', text: '35 cm' },
-      { id: 'B', text: '45 cm' },
-      { id: 'C', text: '55 cm' },
-      { id: 'D', text: '65 cm' },
+      { id: 'A', text: '2 jeruk dan 3 apel' },
+      { id: 'B', text: '3 jeruk dan 2 apel' },
+      { id: 'C', text: '2 jeruk dan 5 apel' },
+      { id: 'D', text: '3 jeruk dan 5 apel' },
     ],
-    correctAnswer: 'B',
+    correctAnswer: 'A',
     explanation:
-      'Panjang rusuk = ∛Volume = ∛91.125.\nPerhatikan akhiran angka 5, akar satuannya adalah 5.\nKelompok ribuan 91 berada di antara 4³ = 64 dan 5³ = 125, sehingga puluhannya adalah 4.\nJadi ∛91.125 = 45 cm.',
+      'Jumlah jeruk tiap kantong = 30 ÷ 15 = 2 buah jeruk.\nJumlah apel tiap kantong = 45 ÷ 15 = 3 buah apel.\nJadi tiap kantong berisi 2 jeruk dan 3 apel.',
   },
+
+  // --- SOAL 18 ---
   {
     id: 18,
     type: 'pg',
-    topic: 'Konversi Satuan Kecepatan',
-    difficulty: 'Sedang',
-    text: 'Seorang pelari maraton cilik melintasi jalan raya sejauh 3,6 kilometer dalam waktu 15 menit. Kecepatan rata-rata pelari tersebut bila dinyatakan dalam satuan meter per detik (m/s) adalah...',
+    topic: 'Penerapan FPB (Potongan Pita)',
+    difficulty: 'Sukar',
+    text: 'Putu memiliki dua utas pita kain: pita merah sepanjang 56 cm dan pita kuning sepanjang 70 cm.\nIa ingin memotong kedua pita tersebut menjadi potongan-potongan yang sama panjang tanpa ada sisa sedikit pun.\nPanjang potongan pita terpanjang yang dapat dibuat oleh Putu adalah...',
+    image: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="130" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <g transform="translate(30, 25)">
+        <rect x="0" y="0" width="220" height="24" rx="4" fill="#EF4444"/>
+        <text x="110" y="16" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">Pita Merah = 56 cm</text>
+      </g>
+      <g transform="translate(30, 60)">
+        <rect x="0" y="0" width="280" height="24" rx="4" fill="#EAB308"/>
+        <text x="140" y="16" fill="#713F12" font-size="11" font-weight="bold" text-anchor="middle">Pita Kuning = 70 cm</text>
+      </g>
+      <text x="200" y="115" fill="#475569" font-size="11" text-anchor="middle">Panjang potongan terpanjang sama rata = FPB dari 56 dan 70</text>
+    </svg>`,
     options: [
-      { id: 'A', text: '3 m/s' },
-      { id: 'B', text: '4 m/s' },
-      { id: 'C', text: '5 m/s' },
-      { id: 'D', text: '6 m/s' },
+      { id: 'A', text: '7 cm' },
+      { id: 'B', text: '14 cm' },
+      { id: 'C', text: '28 cm' },
+      { id: 'D', text: '35 cm' },
     ],
     correctAnswer: 'B',
     explanation:
-      'Jarak = 3,6 km = 3,6 × 1.000 meter = 3.600 meter.\nWaktu = 15 menit = 15 × 60 detik = 900 detik.\nKecepatan = Jarak ÷ Waktu = 3.600 m ÷ 900 s = 4 m/s.',
+      'Panjang potongan pita terpanjang sama rata ditentukan dengan FPB:\n56 = 2³ × 7\n70 = 2 × 5 × 7\nFaktor prima persekutuan dengan pangkat terkecil: 2 dan 7.\nFPB = 2 × 7 = 14 cm.',
   },
 
-  // --- PILIHAN GANDA KOMPLEKS (3 SOAL) ---
-  // Ketentuan: Kemungkinan lebih dari 1 pilihan jawaban benar, setiap soal memiliki 3 pilihan jawaban
+  // --- SOAL 19 ---
   {
     id: 19,
-    type: 'pgk',
-    topic: 'Sifat-Sifat Bangun Datar',
+    type: 'pg',
+    topic: 'Penerapan KPK (Lampu Hias Berkedip)',
     difficulty: 'Sedang',
-    text: 'Perhatikan sifat-sifat bangun datar layang-layang berikut. Pilihlah SEMUA pernyataan yang BENAR mengenai bangun datar layang-layang! (Pilihan benar bisa lebih dari satu)',
+    text: 'Di panggung pertunjukan sekolah terdapat dua lampu sorot warna-warni.\nLampu merah menyala setiap 4 detik sekali, dan lampu hijau menyala setiap 6 detik sekali.\nJika kedua lampu menyala bersama-sama pada detik ke-0, pada detik ke berapa kedua lampu tersebut akan menyala bersama-sama lagi untuk yang pertama kalinya?',
+    image: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="130" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <g transform="translate(30, 20)">
+        <circle cx="20" cy="20" r="14" fill="#EF4444"/>
+        <text x="45" y="24" fill="#991B1B" font-size="11" font-weight="bold">Lampu Merah: setiap 4 detik (4, 8, 12, 16, ...)</text>
+      </g>
+      <g transform="translate(30, 55)">
+        <circle cx="20" cy="20" r="14" fill="#22C55E"/>
+        <text x="45" y="24" fill="#166534" font-size="11" font-weight="bold">Lampu Hijau: setiap 6 detik (6, 12, 18, 24, ...)</text>
+      </g>
+      <text x="200" y="112" fill="#DC2626" font-size="11" font-weight="bold" text-anchor="middle">Menyala bersamaan kembali = Konsep KPK</text>
+    </svg>`,
     options: [
-      { id: 'A', text: 'Mempunyai dua pasang sisi yang sama panjang dan berdekatan' },
-      { id: 'B', text: 'Kedua diagonalnya saling berpotongan tegak lurus (membentuk sudut 90°)' },
-      { id: 'C', text: 'Mempunyai dua pasang sudut berhadapan yang sama besar' },
+      { id: 'A', text: 'Detik ke-8' },
+      { id: 'B', text: 'Detik ke-10' },
+      { id: 'C', text: 'Detik ke-12' },
+      { id: 'D', text: 'Detik ke-24' },
     ],
-    correctAnswer: ['A', 'B'],
+    correctAnswer: 'C',
     explanation:
-      'Sifat layang-layang:\n- Memiliki 2 pasang sisi berdekatan yang sama panjang (Benar - A)\n- Kedua diagonal berpotongan tegak lurus (Benar - B)\n- Memiliki TEPAT SATU pasang sudut berhadapan yang sama besar, bukan dua pasang (C Salah).\nJadi pilihan yang benar adalah A dan B.',
-  },
-  {
-    id: 20,
-    type: 'pgk',
-    topic: 'Keliling, Luas, & Aritmatika',
-    difficulty: 'Sukar',
-    text: 'Pak Budi memiliki sebidang tanah kebun berbentuk persegi panjang dengan ukuran panjang 24 meter dan lebar 16 meter. Manakah dari pernyataan-pernyataan berikut yang bernilai BENAR? (Pilihan benar bisa lebih dari satu)',
-    options: [
-      { id: 'A', text: 'Luas tanah kebun Pak Budi adalah 384 meter persegi (m²)' },
-      { id: 'B', text: 'Keliling tanah kebun Pak Budi adalah 80 meter' },
-      { id: 'C', text: 'Jika tanah tersebut dijual dengan harga Rp500.000,00 per m², maka total uang hasil penjualan tanah adalah Rp192.000.000,00' },
-    ],
-    correctAnswer: ['A', 'B', 'C'],
-    explanation:
-      'Perhitungan:\n- Luas = panjang × lebar = 24 m × 16 m = 384 m² (Benar - A)\n- Keliling = 2 × (p + l) = 2 × (24 + 16) = 2 × 40 = 80 meter (Benar - B)\n- Total harga jual = 384 m² × Rp500.000 = Rp192.000.000,00 (Benar - C).\nKetiga pernyataan bernilai benar.',
-  },
-  {
-    id: 21,
-    type: 'pgk',
-    topic: 'Operasi Hitung Campuran & Satuan Berat',
-    difficulty: 'Sedang',
-    text: 'Ibu berbelanja ke pasar membeli 3 kantong beras yang masing-masing seberat 2,5 kg dan 4 kantong gula pasir yang masing-masing seberat 0,75 kg. Manakah dari pernyataan-pernyataan berikut yang bernilai BENAR? (Pilihan jawaban benar bisa lebih dari satu)',
-    options: [
-      { id: 'A', text: 'Total berat seluruh beras yang dibeli Ibu adalah 7,5 kg' },
-      { id: 'B', text: 'Total berat seluruh gula pasir yang dibeli Ibu adalah 3,0 kg' },
-      { id: 'C', text: 'Total berat seluruh belanjaan beras dan gula pasir Ibu adalah 11,5 kg' },
-    ],
-    correctAnswer: ['A', 'B'],
-    explanation:
-      'Perhitungan belanjaan Ibu:\n- Berat beras = 3 × 2,5 kg = 7,5 kg (Benar - A)\n- Berat gula pasir = 4 × 0,75 kg = 3,0 kg (Benar - B)\n- Total berat belanjaan = 7,5 kg + 3,0 kg = 10,5 kg (C Salah, karena pada opsi tertulis 11,5 kg).\nJadi pernyataan yang bernilai benar adalah A dan B.',
+      'Peristiwa yang berulang secara berkala dan terjadi bersamaan kembali diselesaikan dengan mencari KPK.\nKelipatan 4 = 4, 8, 12, 16, ...\nKelipatan 6 = 6, 12, 18, ...\nKPK dari 4 dan 6 adalah 12.\nJadi kedua lampu menyala bersamaan kembali pada detik ke-12.',
   },
 
-  // --- PILIHAN GANDA KOMPLEKS KATEGORI (9 SOAL) ---
-  // Ketentuan: Setiap soal memiliki 3 deskripsi/pernyataan yang harus direspons Benar / Salah
+  // --- SOAL 20 ---
+  {
+    id: 20,
+    type: 'pg',
+    topic: 'Penerapan KPK (Jadwal Bersama)',
+    difficulty: 'Sedang',
+    text: 'Edo berlatih renang setiap 3 hari sekali, sedangkan Beni berlatih renang setiap 4 hari sekali di kolam yang sama.\nJika mereka berenang bersama-sama untuk pertama kali pada tanggal 2 Mei 2026,\npada tanggal berapa mereka akan berenang bersama-sama lagi untuk yang kedua kalinya?',
+    image: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="130" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <rect x="140" y="12" width="120" height="26" rx="6" fill="#1D4ED8"/>
+      <text x="200" y="29" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">KALENDER MEI 2026</text>
+      <g transform="translate(50, 48)">
+        <rect x="0" y="0" width="85" height="42" rx="6" fill="#DBEAFE" stroke="#3B82F6"/>
+        <text x="42" y="18" fill="#1E40AF" font-size="10" font-weight="bold" text-anchor="middle">Pertama Kali</text>
+        <text x="42" y="34" fill="#1E3A8A" font-size="12" font-weight="extrabold" text-anchor="middle">2 Mei</text>
+        <text x="145" y="26" fill="#64748B" font-size="18" font-weight="bold" text-anchor="middle">+</text>
+        <rect x="210" y="0" width="85" height="42" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+        <text x="252" y="18" fill="#B45309" font-size="10" font-weight="bold" text-anchor="middle">KPK (3 &amp; 4)</text>
+        <text x="252" y="34" fill="#92400E" font-size="12" font-weight="extrabold" text-anchor="middle">12 Hari</text>
+      </g>
+      <text x="200" y="115" fill="#1E3A8A" font-size="11" font-weight="bold" text-anchor="middle">Tanggal kedua = 2 Mei + 12 hari = ... Mei?</text>
+    </svg>`,
+    options: [
+      { id: 'A', text: '9 Mei 2026' },
+      { id: 'B', text: '12 Mei 2026' },
+      { id: 'C', text: '14 Mei 2026' },
+      { id: 'D', text: '16 Mei 2026' },
+    ],
+    correctAnswer: 'C',
+    explanation:
+      'KPK dari 3 dan 4 adalah 12 hari.\nMereka berenang bersama lagi setelah 12 hari dari tanggal pertama:\nTanggal = 2 Mei + 12 hari = 14 Mei 2026.',
+  },
+
+  // --- SOAL 21 ---
+  {
+    id: 21,
+    type: 'pg',
+    topic: 'Penerapan KPK (Jadwal Keberangkatan Bus)',
+    difficulty: 'Sukar',
+    text: 'Tiga armada bus pariwisata berangkat dari terminal Negara Jembrana.\nBus A berangkat setiap 15 menit sekali, bus B setiap 20 menit sekali, dan bus C setiap 30 menit sekali.\nJika ketiga bus tersebut berangkat bersama-sama pada pukul 06.30 pagi,\npada pukul berapa ketiga bus tersebut akan berangkat bersama-sama lagi?',
+    image: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="130" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <g transform="translate(30, 20)">
+        <rect x="0" y="0" width="100" height="55" rx="6" fill="#EFF6FF" stroke="#3B82F6"/>
+        <text x="50" y="20" fill="#1E40AF" font-size="10" font-weight="bold" text-anchor="middle">🚌 Bus A</text>
+        <text x="50" y="38" fill="#1E3A8A" font-size="11" font-weight="bold" text-anchor="middle">Tiap 15 mnt</text>
+      </g>
+      <g transform="translate(150, 20)">
+        <rect x="0" y="0" width="100" height="55" rx="6" fill="#F0FDF4" stroke="#22C55E"/>
+        <text x="50" y="20" fill="#166534" font-size="10" font-weight="bold" text-anchor="middle">🚌 Bus B</text>
+        <text x="50" y="38" fill="#14532D" font-size="11" font-weight="bold" text-anchor="middle">Tiap 20 mnt</text>
+      </g>
+      <g transform="translate(270, 20)">
+        <rect x="0" y="0" width="100" height="55" rx="6" fill="#FFFBEB" stroke="#F59E0B"/>
+        <text x="50" y="20" fill="#B45309" font-size="10" font-weight="bold" text-anchor="middle">🚌 Bus C</text>
+        <text x="50" y="38" fill="#92400E" font-size="11" font-weight="bold" text-anchor="middle">Tiap 30 mnt</text>
+      </g>
+      <text x="200" y="105" fill="#334155" font-size="11" font-weight="bold" text-anchor="middle">KPK dari 15, 20, dan 30 = 60 menit (1 jam)</text>
+      <text x="200" y="120" fill="#64748B" font-size="10" text-anchor="middle">Pukul 06.30 + 1 jam = ... ?</text>
+    </svg>`,
+    options: [
+      { id: 'A', text: 'Pukul 07.00' },
+      { id: 'B', text: 'Pukul 07.15' },
+      { id: 'C', text: 'Pukul 07.30' },
+      { id: 'D', text: 'Pukul 08.00' },
+    ],
+    correctAnswer: 'C',
+    explanation:
+      'Cari KPK dari 15, 20, dan 30:\n15 = 3 × 5\n20 = 2² × 5\n30 = 2 × 3 × 5\nKPK = 2² × 3 × 5 = 60 menit (1 jam).\nBerangkat bersama lagi pada: 06.30 + 1 jam = pukul 07.30.',
+  },
+
+  // --- SOAL 22 ---
   {
     id: 22,
-    type: 'pgk_kategori',
-    topic: 'Aritmatika Sosial (Bruto, Neto, Tara, & Laba)',
-    difficulty: 'Sukar',
-    text: 'Seorang pedagang buah membeli 5 keranjang buah mangga di pasar induk. Setiap keranjang memiliki berat kotor (bruto) 40 kg dengan tara 5%. Harga beli mangga adalah Rp12.000,00 per kg neto. Seluruh mangga tersebut kemudian dijual kembali secara eceran dengan harga Rp15.000,00 per kg. Tentukan kebenaran dari masing-masing pernyataan berikut (Pilih Benar atau Salah):',
-    statements: [
-      {
-        id: 's1',
-        text: 'Berat bersih (neto) seluruh buah mangga dari 5 keranjang tersebut adalah 190 kg.',
-        correctAnswer: true,
-      },
-      {
-        id: 's2',
-        text: 'Total modal yang dikeluarkan pedagang untuk membeli seluruh mangga neto adalah Rp2.400.000,00.',
-        correctAnswer: false,
-      },
-      {
-        id: 's3',
-        text: 'Keuntungan bersih yang diperoleh pedagang apabila seluruh mangga laku terjual adalah Rp570.000,00.',
-        correctAnswer: true,
-      },
+    type: 'pg',
+    topic: 'FPB & KPK Simultan',
+    difficulty: 'Sedang',
+    text: 'Perhatikan diagram faktorisasi prima dari bilangan 12 dan 18 di atas!\n12 = 2² × 3\n18 = 2 × 3²\nNilai FPB dan KPK dari bilangan 12 dan 18 berturut-turut adalah...',
+    image: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="130" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <g transform="translate(40, 20)">
+        <rect x="0" y="0" width="140" height="65" rx="8" fill="#EFF6FF" stroke="#3B82F6"/>
+        <text x="70" y="24" fill="#1E40AF" font-size="11" font-weight="bold" text-anchor="middle">FPB (Pangkat Kecil)</text>
+        <text x="70" y="48" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">2 × 3 = 6</text>
+      </g>
+      <g transform="translate(220, 20)">
+        <rect x="0" y="0" width="140" height="65" rx="8" fill="#FDF4FF" stroke="#C084FC"/>
+        <text x="70" y="24" fill="#7E22CE" font-size="11" font-weight="bold" text-anchor="middle">KPK (Pangkat Besar)</text>
+        <text x="70" y="48" fill="#6B21A8" font-size="12" font-weight="bold" text-anchor="middle">2² × 3² = 36</text>
+      </g>
+      <text x="200" y="112" fill="#475569" font-size="11" text-anchor="middle">FPB = 6  dan  KPK = 36</text>
+    </svg>`,
+    options: [
+      { id: 'A', text: '6 dan 24' },
+      { id: 'B', text: '6 dan 36' },
+      { id: 'C', text: '12 dan 36' },
+      { id: 'D', text: '3 dan 36' },
     ],
+    correctAnswer: 'B',
     explanation:
-      '1. Tara tiap keranjang = 5% × 40 kg = 2 kg. Neto tiap keranjang = 40 - 2 = 38 kg. Total neto 5 keranjang = 5 × 38 = 190 kg (BENAR).\n2. Modal pembelian = 190 kg × Rp12.000 = Rp2.280.000,00 (SALAH, tertulis Rp2.400.000).\n3. Total hasil penjualan = 190 kg × Rp15.000 = Rp2.850.000,00. Keuntungan = Rp2.850.000 - Rp2.280.000 = Rp570.000,00 (BENAR).',
+      '12 = 2² × 3\n18 = 2 × 3²\nFPB (faktor sama pangkat terkecil) = 2 × 3 = 6.\nKPK (semua faktor pangkat terbesar) = 2² × 3² = 4 × 9 = 36.\nJadi FPB dan KPK berturut-turut adalah 6 dan 36.',
   },
+
+  // --- SOAL 23 ---
   {
     id: 23,
-    type: 'pgk_kategori',
-    topic: 'Statistika & Analisis KKTP',
+    type: 'pg',
+    topic: 'FPB Faktorisasi Prima Berpangkat',
     difficulty: 'Sedang',
-    text: 'Berikut disajikan data rekap nilai ulangan matematika dari 30 siswa kelas VI Sekolah Dasar:\n• Nilai 60 diperoleh oleh 3 siswa\n• Nilai 70 diperoleh oleh 7 siswa\n• Nilai 80 diperoleh oleh 12 siswa\n• Nilai 90 diperoleh oleh 6 siswa\n• Nilai 100 diperoleh oleh 2 siswa\nKKTP mata pelajaran matematika yang ditetapkan sekolah adalah 70. Tentukan kebenaran dari masing-masing pernyataan berikut (Pilih Benar atau Salah):',
-    statements: [
-      {
-        id: 's1',
-        text: 'Modus dari perolehan nilai matematika siswa kelas VI tersebut adalah 80.',
-        correctAnswer: true,
-      },
-      {
-        id: 's2',
-        text: 'Banyak siswa yang telah berhasil mencapai atau melampaui KKTP (nilai ≥ 70) adalah sebanyak 27 siswa.',
-        correctAnswer: true,
-      },
-      {
-        id: 's3',
-        text: 'Persentase siswa yang belum mencapai KKTP terhadap seluruh siswa di kelas adalah sebesar 15%.',
-        correctAnswer: false,
-      },
+    text: 'Dua buah bilangan A dan B memiliki bentuk faktorisasi prima sebagai berikut:\nA = 2³ × 3²\nB = 2² × 3³ × 5\nFaktor Persekutuan Terbesar (FPB) dari kedua bilangan tersebut adalah...',
+    image: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="130" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <g transform="translate(30, 20)">
+        <rect x="0" y="0" width="160" height="65" rx="8" fill="#EFF6FF" stroke="#3B82F6"/>
+        <text x="80" y="24" fill="#1E40AF" font-size="11" font-weight="bold" text-anchor="middle">Bilangan A</text>
+        <text x="80" y="48" fill="#1E3A8A" font-size="13" font-weight="bold" text-anchor="middle">2³ × 3²</text>
+      </g>
+      <g transform="translate(210, 20)">
+        <rect x="0" y="0" width="160" height="65" rx="8" fill="#F0FDF4" stroke="#22C55E"/>
+        <text x="80" y="24" fill="#166534" font-size="11" font-weight="bold" text-anchor="middle">Bilangan B</text>
+        <text x="80" y="48" fill="#14532D" font-size="13" font-weight="bold" text-anchor="middle">2² × 3³ × 5</text>
+      </g>
+      <text x="200" y="112" fill="#475569" font-size="11" text-anchor="middle">Pilih faktor prima yang sama dengan pangkat terkecil: 2² dan 3²</text>
+    </svg>`,
+    options: [
+      { id: 'A', text: '2² × 3²' },
+      { id: 'B', text: '2³ × 3³' },
+      { id: 'C', text: '2² × 3² × 5' },
+      { id: 'D', text: '2³ × 3³ × 5' },
     ],
+    correctAnswer: 'A',
     explanation:
-      '1. Modus adalah data dengan frekuensi tertinggi, yaitu nilai 80 sebanyak 12 siswa (BENAR).\n2. Siswa tuntas (≥70) = 7 + 12 + 6 + 2 = 27 siswa (BENAR).\n3. Siswa belum tuntas (<70) = 3 orang. Persentase = (3 ÷ 30) × 100% = 10% (SALAH, tertulis 15%).',
+      'Untuk menentukan FPB:\n1. Pilih faktor prima yang ada pada kedua bilangan (hanya angka 2 dan 3, angka 5 tidak ikut karena hanya ada di B).\n2. Ambil pangkat terkecil: 2² dan 3².\nFPB = 2² × 3².',
   },
+
+  // --- SOAL 24 ---
   {
     id: 24,
-    type: 'pgk_kategori',
-    topic: 'Volume Bangun Ruang (Balok) & Satuan Liter',
+    type: 'pg',
+    topic: 'KPK Faktorisasi Prima Berpangkat',
     difficulty: 'Sedang',
-    text: 'Sebuah bak penampungan air berbentuk balok di sekolah memiliki ukuran panjang 150 cm, lebar 80 cm, dan tinggi 100 cm. Bak tersebut pada mulanya kosong kemudian diisi air hingga mencapai 3/4 dari kapasitas totalnya. Tentukan kebenaran dari masing-masing pernyataan berikut (Pilih Benar atau Salah):',
-    statements: [
-      {
-        id: 's1',
-        text: 'Volume total bak penampungan air tersebut jika terisi penuh adalah 1.200 liter.',
-        correctAnswer: true,
-      },
-      {
-        id: 's2',
-        text: 'Volume air yang ada di dalam bak saat ini adalah 900 liter.',
-        correctAnswer: true,
-      },
-      {
-        id: 's3',
-        text: 'Volume air yang masih harus ditambahkan agar bak terisi penuh adalah 350 liter.',
-        correctAnswer: false,
-      },
+    text: 'Dua buah bilangan P dan Q memiliki bentuk faktorisasi prima sebagai berikut:\nP = 2² × 3 × 5\nQ = 2 × 3² × 7\nKelipatan Persekutuan Terkecil (KPK) dari bilangan P dan Q adalah...',
+    image: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="130" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <g transform="translate(30, 20)">
+        <rect x="0" y="0" width="160" height="65" rx="8" fill="#FEF3C7" stroke="#F59E0B"/>
+        <text x="80" y="24" fill="#B45309" font-size="11" font-weight="bold" text-anchor="middle">Bilangan P</text>
+        <text x="80" y="48" fill="#92400E" font-size="12" font-weight="bold" text-anchor="middle">2² × 3 × 5</text>
+      </g>
+      <g transform="translate(210, 20)">
+        <rect x="0" y="0" width="160" height="65" rx="8" fill="#F3E8FF" stroke="#A855F7"/>
+        <text x="80" y="24" fill="#6B21A8" font-size="11" font-weight="bold" text-anchor="middle">Bilangan Q</text>
+        <text x="80" y="48" fill="#581C87" font-size="12" font-weight="bold" text-anchor="middle">2 × 3² × 7</text>
+      </g>
+      <text x="200" y="112" fill="#475569" font-size="11" text-anchor="middle">KPK = Kalikan SEMUA faktor prima dengan pangkat terbesar</text>
+    </svg>`,
+    options: [
+      { id: 'A', text: '2 × 3' },
+      { id: 'B', text: '2² × 3²' },
+      { id: 'C', text: '2² × 3² × 5 × 7' },
+      { id: 'D', text: '2³ × 3³ × 5 × 7' },
     ],
+    correctAnswer: 'C',
     explanation:
-      '1. Volume bak penuh = 150 cm × 80 cm × 100 cm = 1.200.000 cm³ = 1.200 liter (BENAR).\n2. Volume air saat ini (3/4 bagian) = 3/4 × 1.200 liter = 900 liter (BENAR).\n3. Air yang masih harus ditambahkan = 1.200 liter - 900 liter = 300 liter (SALAH, tertulis 350 liter).',
+      'Untuk menentukan KPK:\n1. Tuliskan seluruh faktor prima yang muncul pada P maupun Q: 2, 3, 5, dan 7.\n2. Ambil pangkat tertinggi untuk setiap faktor: 2², 3², 5¹, dan 7¹.\nKPK = 2² × 3² × 5 × 7.',
   },
+
+  // --- SOAL 25 ---
   {
     id: 25,
-    type: 'pgk_kategori',
-    topic: 'Geometri Lingkaran (Keliling & Luas)',
-    difficulty: 'Sedang',
-    text: 'Sebuah meja hias bundar memiliki permukaan berbentuk lingkaran dengan panjang diameter 140 cm. Di sekeliling tepi meja akan dipasang pita renda hias, dan seluruh permukaan meja akan ditutup dengan kaca bening. (Gunakan π = 22/7). Tentukan kebenaran dari masing-masing pernyataan berikut (Pilih Benar atau Salah):',
-    statements: [
-      {
-        id: 's1',
-        text: 'Panjang jari-jari permukaan meja bundar tersebut adalah 70 cm.',
-        correctAnswer: true,
-      },
-      {
-        id: 's2',
-        text: 'Panjang pita renda hias minimal yang dibutuhkan untuk mengelilingi meja adalah 440 cm.',
-        correctAnswer: true,
-      },
-      {
-        id: 's3',
-        text: 'Luas permukaan kaca bening penutup meja tersebut adalah 15.400 cm².',
-        correctAnswer: true,
-      },
+    type: 'pg',
+    topic: 'Penerapan FPB (HOTS Ubin Lantai)',
+    difficulty: 'Sukar',
+    text: 'Lantai ruang kelas 5 SD Negeri 3 Loloan Timur yang berukuran panjang 120 cm dan lebar 80 cm akan dipasangi ubin keramik berbentuk persegi.\nJika seluruh lantai harus tertutup pas tanpa ada ubin keramik yang dipotong,\nmaka ukuran sisi ubin keramik terbesar yang dapat digunakan adalah...',
+    image: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="130" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <g transform="translate(60, 20)">
+        <!-- Floor grid -->
+        <rect x="0" y="0" width="180" height="80" fill="#E2E8F0" stroke="#475569" stroke-width="2"/>
+        <!-- Tiles grid 40x40 -->
+        <rect x="0" y="0" width="60" height="40" fill="#BFDBFE" stroke="#2563EB"/>
+        <rect x="60" y="0" width="60" height="40" fill="#BFDBFE" stroke="#2563EB"/>
+        <rect x="120" y="0" width="60" height="40" fill="#BFDBFE" stroke="#2563EB"/>
+        <rect x="0" y="40" width="60" height="40" fill="#BFDBFE" stroke="#2563EB"/>
+        <rect x="60" y="40" width="60" height="40" fill="#BFDBFE" stroke="#2563EB"/>
+        <rect x="120" y="40" width="60" height="40" fill="#BFDBFE" stroke="#2563EB"/>
+        <text x="90" y="-6" fill="#1E293B" font-size="10" font-weight="bold" text-anchor="middle">Panjang 120 cm</text>
+        <text x="-8" y="45" fill="#1E293B" font-size="10" font-weight="bold" text-anchor="end">80 cm</text>
+      </g>
+      <g transform="translate(265, 35)">
+        <rect x="0" y="0" width="70" height="50" rx="6" fill="#EFF6FF" stroke="#3B82F6"/>
+        <text x="35" y="20" fill="#1E40AF" font-size="9" font-weight="bold" text-anchor="middle">Ubin Persegi</text>
+        <text x="35" y="38" fill="#1E3A8A" font-size="11" font-weight="extrabold" text-anchor="middle">FPB = s ?</text>
+      </g>
+      <text x="200" y="118" fill="#475569" font-size="10" text-anchor="middle">Ukuran terbesar persegi menutup sempurna = FPB(120, 80)</text>
+    </svg>`,
+    options: [
+      { id: 'A', text: '20 cm' },
+      { id: 'B', text: '30 cm' },
+      { id: 'C', text: '40 cm' },
+      { id: 'D', text: '60 cm' },
     ],
+    correctAnswer: 'C',
     explanation:
-      '1. Jari-jari meja (r) = diameter ÷ 2 = 140 ÷ 2 = 70 cm (BENAR).\n2. Keliling meja = π × d = 22/7 × 140 cm = 440 cm (BENAR).\n3. Luas permukaan meja = π × r² = 22/7 × 70 × 70 = 15.400 cm² (BENAR).',
+      'Ukuran sisi ubin persegi terbesar yang menutup sempurna panjang dan lebar lantai ditentukan oleh FPB dari 120 dan 80.\n120 = 2³ × 3 × 5\n80 = 2⁴ × 5\nFPB = 2³ × 5 = 8 × 5 = 40 cm.\nJadi ukuran sisi keramik terbesar adalah 40 cm.',
   },
+
+  // ==========================================
+  // BAGIAN II: BENAR / SALAH (5 SOAL)
+  // ==========================================
+
+  // --- SOAL 26 ---
   {
     id: 26,
-    type: 'pgk_kategori',
-    topic: 'Skala, Denah, & Luas Sebenarnya',
-    difficulty: 'Sedang',
-    text: 'Denah lapangan upacara di Sekolah Dasar digambar dengan skala 1 : 400. Pada denah tersebut, lapangan digambarkan berbentuk persegi panjang dengan ukuran panjang 12 cm dan lebar 8 cm. Tentukan kebenaran dari masing-masing pernyataan berikut (Pilih Benar atau Salah):',
-    statements: [
-      {
-        id: 's1',
-        text: 'Panjang sebenarnya dari lapangan upacara tersebut adalah 48 meter.',
-        correctAnswer: true,
-      },
-      {
-        id: 's2',
-        text: 'Lebar sebenarnya dari lapangan upacara tersebut adalah 32 meter.',
-        correctAnswer: true,
-      },
-      {
-        id: 's3',
-        text: 'Luas sebenarnya dari lapangan upacara tersebut adalah 1.536 meter persegi (m²).',
-        correctAnswer: true,
-      },
-    ],
+    type: 'benar_salah',
+    topic: 'Konsep Bilangan Prima',
+    difficulty: 'Mudah',
+    text: 'Perhatikan pernyataan matematika di bawah ini:\n\n"Angka 2 adalah satu-satunya bilangan genap yang merupakan bilangan prima."\n\nTentukan apakah pernyataan tersebut BENAR atau SALAH!',
+    image: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="130" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <g transform="translate(150, 15)">
+        <circle cx="50" cy="45" r="35" fill="#10B981" stroke="#059669" stroke-width="3"/>
+        <text x="50" y="56" fill="#FFFFFF" font-size="34" font-weight="extrabold" text-anchor="middle">2</text>
+      </g>
+      <text x="200" y="112" fill="#065F46" font-size="11" font-weight="bold" text-anchor="middle">👑 Bilangan Prima Genap Satu-Satunya di Dunia</text>
+    </svg>`,
+    correctAnswer: 'Benar',
     explanation:
-      '1. Panjang sebenarnya = 12 cm × 400 = 4.800 cm = 48 meter (BENAR).\n2. Lebar sebenarnya = 8 cm × 400 = 3.200 cm = 32 meter (BENAR).\n3. Luas sebenarnya = 48 m × 32 m = 1.536 m² (BENAR).',
+      'Pernyataan tersebut BENAR.\nAngka 2 hanya memiliki 2 faktor, yaitu 1 dan 2, sehingga merupakan bilangan prima.\nSemua bilangan genap lainnya (4, 6, 8, 10, ...) selalu dapat dibagi dengan 2 (memiliki lebih dari 2 faktor), sehingga bukan bilangan prima.',
   },
+
+  // --- SOAL 27 ---
   {
     id: 27,
-    type: 'pgk_kategori',
-    topic: 'Jarak, Waktu Tempuh, & Kecepatan',
-    difficulty: 'Sukar',
-    text: 'Sebuah bus pariwisata membawa rombongan siswa kelas VI menempuh perjalanan dari sekolah ke tempat wisata sejauh 120 km. Bus berangkat pada pukul 06.30 dan tiba di lokasi tujuan pada pukul 09.00. Selama dalam perjalanan, bus sempat berhenti di rest area selama 30 menit untuk istirahat. Tentukan kebenaran dari masing-masing pernyataan berikut (Pilih Benar atau Salah):',
-    statements: [
-      {
-        id: 's1',
-        text: 'Total waktu perjalanan dari waktu berangkat hingga tiba di tujuan adalah 2 jam 30 menit.',
-        correctAnswer: true,
-      },
-      {
-        id: 's2',
-        text: 'Waktu murni bus berjalan (melaju) di jalan raya adalah 2 jam.',
-        correctAnswer: true,
-      },
-      {
-        id: 's3',
-        text: 'Kecepatan rata-rata bus saat sedang melaju di jalan raya adalah 50 km/jam.',
-        correctAnswer: false,
-      },
-    ],
+    type: 'benar_salah',
+    topic: 'Faktor Persekutuan Terbesar',
+    difficulty: 'Mudah',
+    text: 'Perhatikan pohon faktor bilangan 14 dan 21 di atas!\n14 = 2 × 7\n21 = 3 × 7\n\nPernyataan:\n"Faktor Persekutuan Terbesar (FPB) dari bilangan 14 dan 21 adalah 7."\n\nTentukan apakah pernyataan tersebut BENAR atau SALAH!',
+    image: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="130" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <g transform="translate(40, 20)">
+        <rect x="0" y="0" width="140" height="65" rx="8" fill="#EFF6FF" stroke="#3B82F6"/>
+        <text x="70" y="24" fill="#1E40AF" font-size="11" font-weight="bold" text-anchor="middle">Faktorisasi 14</text>
+        <text x="70" y="48" fill="#1E3A8A" font-size="13" font-weight="bold" text-anchor="middle">2 × <tspan fill="#DC2626">7</tspan></text>
+      </g>
+      <g transform="translate(220, 20)">
+        <rect x="0" y="0" width="140" height="65" rx="8" fill="#F0FDF4" stroke="#22C55E"/>
+        <text x="70" y="24" fill="#166534" font-size="11" font-weight="bold" text-anchor="middle">Faktorisasi 21</text>
+        <text x="70" y="48" fill="#14532D" font-size="13" font-weight="bold" text-anchor="middle">3 × <tspan fill="#DC2626">7</tspan></text>
+      </g>
+      <text x="200" y="112" fill="#475569" font-size="11" text-anchor="middle">Faktor persekutuan prima yang sama: angka 7</text>
+    </svg>`,
+    correctAnswer: 'Benar',
     explanation:
-      '1. Waktu tempuh total = 09.00 - 06.30 = 2 jam 30 menit (BENAR).\n2. Waktu gerak murni = 2 jam 30 menit - 30 menit istirahat = 2 jam (BENAR).\n3. Kecepatan rata-rata bus saat melaju = Jarak ÷ Waktu gerak = 120 km ÷ 2 jam = 60 km/jam (SALAH, tertulis 50 km/jam).',
+      'Pernyataan tersebut BENAR.\nFaktor prima dari 14 adalah 2 dan 7.\nFaktor prima dari 21 adalah 3 dan 7.\nFaktor persekutuan yang sama hanyalah angka 7, sehingga FPB dari 14 dan 21 memang benar adalah 7.',
   },
+
+  // --- SOAL 28 ---
   {
     id: 28,
-    type: 'pgk_kategori',
-    topic: 'Operasi Pecahan & Persentase',
-    difficulty: 'Mudah',
-    text: 'Koperasi Siswa memiliki persediaan awal buku tulis sebanyak 200 buah. Pada hari Senin, terjual 30% dari persediaan awal tersebut. Pada hari Selasa, terjual 2/5 bagian dari persediaan awal. Tentukan kebenaran dari masing-masing pernyataan berikut (Pilih Benar atau Salah):',
-    statements: [
-      {
-        id: 's1',
-        text: 'Banyak buku tulis yang terjual pada hari Senin adalah 60 buah.',
-        correctAnswer: true,
-      },
-      {
-        id: 's2',
-        text: 'Banyak buku tulis yang terjual pada hari Selasa adalah 80 buah.',
-        correctAnswer: true,
-      },
-      {
-        id: 's3',
-        text: 'Sisa buku tulis di koperasi siswa setelah hari Selasa adalah sebanyak 70 buah.',
-        correctAnswer: false,
-      },
-    ],
+    type: 'benar_salah',
+    topic: 'Kelipatan Persekutuan Terkecil',
+    difficulty: 'Sedang',
+    text: 'Perhatikan kelipatan bilangan 6 dan 8 pada gambar di atas!\n\nPernyataan:\n"Kelipatan Persekutuan Terkecil (KPK) dari bilangan 6 dan 8 adalah 48."\n\nTentukan apakah pernyataan tersebut BENAR atau SALAH!',
+    image: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="130" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <g transform="translate(30, 20)">
+        <text x="10" y="24" fill="#1D4ED8" font-size="11" font-weight="bold">Kelipatan 6:</text>
+        <text x="95" y="24" fill="#334155" font-size="11">6, 12, 18, <tspan fill="#10B981" font-weight="extrabold">24</tspan>, 30, 36, 42, <tspan fill="#EF4444" font-weight="bold">48</tspan>...</text>
+      </g>
+      <g transform="translate(30, 55)">
+        <text x="10" y="24" fill="#15803D" font-size="11" font-weight="bold">Kelipatan 8:</text>
+        <text x="95" y="24" fill="#334155" font-size="11">8, 16, <tspan fill="#10B981" font-weight="extrabold">24</tspan>, 32, 40, <tspan fill="#EF4444" font-weight="bold">48</tspan>...</text>
+      </g>
+      <text x="200" y="112" fill="#B45309" font-size="11" font-weight="bold" text-anchor="middle">Perhatikan titik temu pertama (angka terkecil): 24 vs 48</text>
+    </svg>`,
+    correctAnswer: 'Salah',
     explanation:
-      '1. Penjualan hari Senin = 30% × 200 = 60 buku (BENAR).\n2. Penjualan hari Selasa = 2/5 × 200 = 80 buku (BENAR).\n3. Sisa buku = 200 - (60 + 80) = 200 - 140 = 60 buku (SALAH, tertulis 70 buah).',
+      'Pernyataan tersebut SALAH.\n48 memang merupakan kelipatan persekutuan dari 6 dan 8, tetapi BUKAN yang TERKECIL.\nKelipatan persekutuan terkecil (KPK) dari 6 dan 8 adalah 24, bukan 48.\n(6 = 2 × 3; 8 = 2³; KPK = 2³ × 3 = 24).',
   },
+
+  // --- SOAL 29 ---
   {
     id: 29,
-    type: 'pgk_kategori',
-    topic: 'FPB & Penerapan Pembagian Paket',
+    type: 'benar_salah',
+    topic: 'Penerapan KPK (Jadwal Les)',
     difficulty: 'Sedang',
-    text: 'Pak Guru menyiapkan 36 penggaris, 54 bolpoin, dan 72 buku gambar sebagai paket hadiah lomba kebersihan kelas. Paket-paket tersebut akan dibagikan kepada sebanyak-banyaknya regu dengan isi masing-masing jenis barang yang sama banyak. Tentukan kebenaran dari masing-masing pernyataan berikut (Pilih Benar atau Salah):',
-    statements: [
-      {
-        id: 's1',
-        text: 'Faktor Persekutuan Terbesar (FPB) dari 36, 54, dan 72 adalah 18.',
-        correctAnswer: true,
-      },
-      {
-        id: 's2',
-        text: 'Banyak regu terbanyak yang dapat menerima paket hadiah tersebut adalah 18 regu.',
-        correctAnswer: true,
-      },
-      {
-        id: 's3',
-        text: 'Setiap regu akan menerima paket hadiah berupa 2 penggaris, 3 bolpoin, dan 4 buku gambar.',
-        correctAnswer: true,
-      },
-    ],
+    text: 'Ani mengikuti les menari Bali setiap 4 hari sekali, sedangkan Siti mengikuti les menari setiap 6 hari sekali di sanggar yang sama.\n\nPernyataan:\n"Ani dan Siti akan bertemu untuk les menari bersama-sama di sanggar setiap 12 hari sekali."\n\nTentukan apakah pernyataan tersebut BENAR atau SALAH!',
+    image: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="130" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <g transform="translate(40, 20)">
+        <rect x="0" y="0" width="140" height="65" rx="8" fill="#EFF6FF" stroke="#3B82F6"/>
+        <text x="70" y="24" fill="#1E40AF" font-size="11" font-weight="bold" text-anchor="middle">💃 Ani</text>
+        <text x="70" y="48" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">Setiap 4 Hari</text>
+      </g>
+      <g transform="translate(220, 20)">
+        <rect x="0" y="0" width="140" height="65" rx="8" fill="#FDF4FF" stroke="#C084FC"/>
+        <text x="70" y="24" fill="#7E22CE" font-size="11" font-weight="bold" text-anchor="middle">💃 Siti</text>
+        <text x="70" y="48" fill="#6B21A8" font-size="12" font-weight="bold" text-anchor="middle">Setiap 6 Hari</text>
+      </g>
+      <text x="200" y="112" fill="#15803D" font-size="11" font-weight="bold" text-anchor="middle">KPK dari 4 dan 6 adalah 12 hari sekali</text>
+    </svg>`,
+    correctAnswer: 'Benar',
     explanation:
-      '1. FPB dari 36, 54, dan 72: 36 = 2² × 3²; 54 = 2 × 3³; 72 = 2³ × 3². FPB = 2 × 3² = 18 (BENAR).\n2. Jumlah regu terbanyak penerima hadiah = FPB = 18 regu (BENAR).\n3. Isi setiap regu: Penggaris = 36 ÷ 18 = 2 buah, Bolpoin = 54 ÷ 18 = 3 buah, Buku gambar = 72 ÷ 18 = 4 buah (BENAR).',
+      'Pernyataan tersebut BENAR.\nJadwal pertemuan bersama dihitung menggunakan KPK dari frekuensi hari masing-masing anak.\nKPK dari 4 dan 6 adalah 12.\nJadi mereka berdua memang akan selalu bertemu setiap 12 hari sekali.',
   },
+
+  // --- SOAL 30 ---
   {
     id: 30,
-    type: 'pgk_kategori',
-    topic: 'Koordinat Kartesius & Geometri',
-    difficulty: 'Sukar',
-    text: 'Pada bidang koordinat Kartesius, digambar empat titik sudut yaitu: titik A(-2, 1), titik B(4, 1), titik C(4, 5), dan titik D(-2, 5). Keempat titik tersebut dihubungkan dengan garis lurus berurutan membentuk bangun datar segiempat ABCD. Tentukan kebenaran dari masing-masing pernyataan berikut (Pilih Benar atau Salah):',
-    statements: [
-      {
-        id: 's1',
-        text: 'Bangun datar segiempat ABCD yang terbentuk adalah bangun persegi panjang.',
-        correctAnswer: true,
-      },
-      {
-        id: 's2',
-        text: 'Keliling dari bangun datar ABCD tersebut adalah 20 satuan panjang.',
-        correctAnswer: true,
-      },
-      {
-        id: 's3',
-        text: 'Luas dari bangun datar ABCD tersebut adalah 30 satuan luas.',
-        correctAnswer: false,
-      },
-    ],
+    type: 'benar_salah',
+    topic: 'Konsep Faktorisasi Prima',
+    difficulty: 'Sedang',
+    text: 'Perhatikan diagram pohon faktor bilangan 40 pada gambar di atas!\n\nPernyataan:\n"Bentuk faktorisasi prima dari bilangan 40 adalah 2² × 10."\n\nTentukan apakah pernyataan tersebut BENAR atau SALAH!',
+    image: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+      <rect width="400" height="130" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+      <circle cx="200" cy="25" r="16" fill="#1E293B"/>
+      <text x="200" y="30" fill="#FFFFFF" font-size="12" font-weight="bold" text-anchor="middle">40</text>
+      <line x1="190" y1="38" x2="150" y2="60" stroke="#64748B" stroke-width="2"/>
+      <line x1="210" y1="38" x2="250" y2="60" stroke="#64748B" stroke-width="2"/>
+      <circle cx="150" cy="65" r="13" fill="#2563EB"/>
+      <text x="150" y="70" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">4</text>
+      <circle cx="250" cy="65" r="13" fill="#EF4444"/>
+      <text x="250" y="70" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">10</text>
+      <text x="200" y="112" fill="#DC2626" font-size="11" font-weight="bold" text-anchor="middle">Ingat: Angka 10 dan 4 bukanlah bilangan prima!</text>
+    </svg>`,
+    correctAnswer: 'Salah',
     explanation:
-      '1. Titik koordinat membentuk persegi panjang dengan panjang alas AB = 4 - (-2) = 6 satuan dan tinggi BC = 5 - 1 = 4 satuan (BENAR).\n2. Keliling = 2 × (panjang + lebar) = 2 × (6 + 4) = 2 × 10 = 20 satuan panjang (BENAR).\n3. Luas = panjang × lebar = 6 × 4 = 24 satuan luas (SALAH, tertulis 30 satuan luas).',
+      'Pernyataan tersebut SALAH.\nFaktorisasi prima HANYA boleh memuat bilangan-bilangan prima (2, 3, 5, 7, ...).\nAngka 10 bukan bilangan prima karena masih dapat dibagi 2 dan 5 (10 = 2 × 5).\nBentuk faktorisasi prima yang benar dari 40 adalah 2³ × 5 (karena 40 = 2 × 2 × 2 × 5).',
   },
 ];

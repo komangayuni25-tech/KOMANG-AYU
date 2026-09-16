@@ -4,16 +4,16 @@
  */
 
 export const CONFIG = {
-  SEKOLAH: "SEKOLAH DASAR",
-  ALAMAT_SEKOLAH: "Jembrana",
+  SEKOLAH: "SD NEGERI 3 LOLOAN TIMUR",
+  ALAMAT_SEKOLAH: "Jl. Merak No. 12, Loloan Timur, Kec. Negara, Kab. Jembrana - Bali",
   KOTA: "Jembrana",
-  KELAS: "VI",
+  KELAS: "V",
   MATA_PELAJARAN: "MATEMATIKA",
-  MATERI: "TKA (Tes Kemampuan Akademik)",
-  GURU: "........................................",
-  NIP_GURU: "........................................",
-  KEPALA_SEKOLAH: "........................................",
-  NIP_KEPALA_SEKOLAH: "........................................",
+  MATERI: "Persekutuan Faktor, Menentukan KPK dan FPB",
+  GURU: "KOMANG AYUNI, S.Pd",
+  NIP_GURU: "198605022022212030", // NIPPPK Guru Kelas 5
+  KEPALA_SEKOLAH: "SUSILO FITRI YATMOKO, M.Pd",
+  NIP_KEPALA_SEKOLAH: "198805212011011010",
   KKTP: 70,
   ADMIN_PASSWORD: "GURUADMIN",
   

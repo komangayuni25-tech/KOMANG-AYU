@@ -254,16 +254,12 @@ export const Stage1Identity: React.FC<Stage1IdentityProps> = ({
             </h4>
             <div className="space-y-2 text-xs">
               <div className="flex items-center justify-between bg-slate-800/80 p-2.5 rounded-lg border border-slate-700">
-                <span>1. Pilihan Ganda (PG)</span>
-                <span className="font-bold text-blue-300">18 Butir</span>
+                <span>1. Pilihan Ganda (PG) Bergambar</span>
+                <span className="font-bold text-blue-300">25 Butir</span>
               </div>
               <div className="flex items-center justify-between bg-slate-800/80 p-2.5 rounded-lg border border-slate-700">
-                <span>2. Pilihan Ganda Kompleks (PGK)</span>
-                <span className="font-bold text-emerald-300">3 Butir</span>
-              </div>
-              <div className="flex items-center justify-between bg-slate-800/80 p-2.5 rounded-lg border border-slate-700">
-                <span>3. PGK Kategori (Benar / Salah)</span>
-                <span className="font-bold text-amber-300">9 Butir</span>
+                <span>2. Benar / Salah (B/S) Bergambar</span>
+                <span className="font-bold text-emerald-300">5 Butir</span>
               </div>
               <div className="flex items-center justify-between pt-2 border-t border-slate-800 text-slate-300">
                 <span>Total Butir Soal:</span>
